@@ -1,10 +1,28 @@
+import os
+import sys
 print('Привет!')
 print('Рад видеть тебя.')
 answer1 = input('Ты уже имеешь аккаунт?')
 if answer1 == 'Да':
     print('Отлично.')
+    def menu():
+        print('Выбери, что бы ты хотел сделать?')
+        print('Написать другу - 1')
+        print('Узнать курс BTC - 2')
+        print('Узнать свой ip - адрес - 3')
+        print('Узнать свои настройки сети - 4')
+        print('Завершить работу - 5')
+        print('Связаться с разработчиком - 0')
 if answer1 == 'Д':
     print('Отлично.')
+    def menu():
+        print('Выбери, что бы ты хотел сделать?')
+        print('Написать другу - 1')
+        print('Узнать курс BTC - 2')
+        print('Узнать свой ip - адрес - 3')
+        print('Узнать свои настройки сети - 4')
+        print('Завершить работу - 5')
+        print('Связаться с разработчиком - 0')
 else:
     print('Думаю, тебе стоит зарегистрироваться.')
     new_user_login = input('Введи свой новый логин')
@@ -26,15 +44,28 @@ else:
             break
 print('Отлично, ты зарегистрирован.')
 #Блок отправления данных в БД
-
-print('Выбери, что бы ты хотел сделать?')
-print('Написать другу - 1')
-print('Узнать курс BTC - 2')
-print('Узнать свой ip - адрес - 3')
-print('Узнать свои настройки сети - 4')
-print('Завершить работу - 5')
-print('Связаться с разработчиком - 0')
-
+menu()
 user_choice = input()
 if user_choice == 1:
-    print(Введи логин )
+    print('Введи логин своего знакомого')
+    new_request = input()
+    #if new_request exists in BD and everything is ok:
+        #print('Соединение успешно установлено.')
+    #Начало переписки
+    #if new_request not exists in BD:
+        #print('Данный логин не найден.')
+elif user_choice == 2:
+    print('Актуальный курс биткоина')
+    #api
+elif user_choice == 3:
+    print("Ваш текущий ip-адрес")
+    #api
+elif user_choice == 4:
+    print('Ваши текущие настройки сети')
+    #api
+elif user_choice == 5:
+    print('До свидания!')
+    exit()
+elif user_choice == 0:
+    print('Реще')
+    #api
