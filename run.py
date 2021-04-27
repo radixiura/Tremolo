@@ -2,12 +2,25 @@ import os
 import sys
 print('Привет!')
 print('Рад видеть тебя.')
-answer1 = input('Ты уже имеешь аккаунт?')
-if answer1 == 'Да' or 'да' or 'Д' or 'д' or 'Y' or 'y':
+answer1 = input('Ты уже имеешь аккаунт?: ')
+if answer1 == 'Да':
     print('Отлично.')
+    old_user_login = input("Введите ваш логин: ")
+    #if old_user_login exist in DB:
+    #   pass
+    #else:
+    #   print('Данный логин не найден в базе данных. Попробуете ввести логин еще раз?: ')
+
+    print('Ваш логин - ' + old_user_login)
+    old_user_password = input("Введите ваш пароль: ")
+    #if old_user_password exist in DB:
+    #   pass
+    #else:
+    #   print('Пароль введен неверно. Попробуете ввести пароль еще раз?: ')
+
     def menu():
         print('Выбери, что бы ты хотел сделать?')
-        print('Написать другу - 1')
+        print('Отправить сообщение - 1')
         print('Узнать курс BTC - 2')
         print('Узнать свой ip - адрес - 3')
         print('Узнать свои настройки сети - 4')
@@ -34,18 +47,16 @@ else:
         if new_user_password_confirmation == new_user_password:
             break
             continue
-print('Отлично, ты зарегистрирован.')
-def menu():
-    print('Выбери, что бы ты хотел сделать?')
-    print('Написать другу - 1')
-    print('Узнать курс BTC - 2')
-    print('Узнать свой ip - адрес - 3')
-    print('Узнать свои настройки сети - 4')
-    print('Завершить работу - 5')
-    print('Связаться с разработчиком - 0')
-#Блок отправления данных в БД
+    print('Отлично, ты зарегистрирован.')
+    def menu():
+        print('Выбери, что бы ты хотел сделать?')
+        print('Написать другу - 1')
+        print('Узнать курс BTC - 2')
+        print('Узнать свой ip - адрес - 3')
+        print('Узнать свои настройки сети - 4')
+        print('Завершить работу - 5')
+        print('Связаться с разработчиком - 0')
 
-user_choice = input("Введи желаемое")
 if user_choice == 1:
     print('Введи логин своего знакомого')
     new_request = input()
