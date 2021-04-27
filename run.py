@@ -3,7 +3,7 @@ import sys
 print('Привет!')
 print('Рад видеть тебя.')
 answer1 = input('Ты уже имеешь аккаунт?')
-if answer1 == 'Да':
+if answer1 == 'Да' or 'да' or 'Д' or 'д' or 'Y' or 'y':
     print('Отлично.')
     def menu():
         print('Выбери, что бы ты хотел сделать?')
@@ -13,16 +13,7 @@ if answer1 == 'Да':
         print('Узнать свои настройки сети - 4')
         print('Завершить работу - 5')
         print('Связаться с разработчиком - 0')
-if answer1 == 'Д':
-    print('Отлично.')
-    def menu():
-        print('Выбери, что бы ты хотел сделать?')
-        print('Написать другу - 1')
-        print('Узнать курс BTC - 2')
-        print('Узнать свой ip - адрес - 3')
-        print('Узнать свои настройки сети - 4')
-        print('Завершить работу - 5')
-        print('Связаться с разработчиком - 0')
+    p = menu()
 else:
     print('Думаю, тебе стоит зарегистрироваться.')
     new_user_login = input('Введи свой новый логин')
@@ -42,10 +33,19 @@ else:
         new_user_password_confirmation = input()
         if new_user_password_confirmation == new_user_password:
             break
+            continue
 print('Отлично, ты зарегистрирован.')
+def menu():
+    print('Выбери, что бы ты хотел сделать?')
+    print('Написать другу - 1')
+    print('Узнать курс BTC - 2')
+    print('Узнать свой ip - адрес - 3')
+    print('Узнать свои настройки сети - 4')
+    print('Завершить работу - 5')
+    print('Связаться с разработчиком - 0')
 #Блок отправления данных в БД
-menu()
-user_choice = input()
+
+user_choice = input("Введи желаемое")
 if user_choice == 1:
     print('Введи логин своего знакомого')
     new_request = input()
