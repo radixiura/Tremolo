@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-struct account
+struct user
 {
   const int ID;
   char name[20];
