@@ -8,21 +8,17 @@ struct user
 };
 int main()
 {
-  using namespace std;
-  account users[2] = 
-  {
-    {1, "nick", "qwerty"},
-    {2, "sofia", "ytrewq"}
-  };
+using namespace std;
 cout << "Hello.\n";
 cout << "I am happy because you are using our chat - messenger." << endl;
 cout << "What is your name?" << endl;
 string new_user_name;
 cin >> new_user_name;
-//Блок включения нового логина в базу данных
-cout << "Glad to see you, " << new_user_name << endl; 
-cout << "Now it is time to choose your password\n";
+cout << "Glad to see you, " << new_user_name << endl;
+cout << "Now it is time to set your password\n";
+//Блок создания нового пользователя
 string new_user_password;
 cin >> new_user_password;
 return 0;
 }
+
