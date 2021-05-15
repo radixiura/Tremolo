@@ -5,7 +5,7 @@ def menu():
     print('Отправить сообщение - 1')
     print('Узнать курс BTC - 2')
     print('Узнать свой ip - адрес - 3')
-    print('Узнать свои настройки сети - 4')
+    print('Узнать больше о программе - 4')
     print('Завершить работу - 5')
     print('Связаться с разработчиком - 0')
 
@@ -78,11 +78,12 @@ elif user_choice == "3":
     a = b.select(" .ipblockgradient .ip")[0].getText()
     print(a)
 elif user_choice == "4":
-    print('Ваши текущие настройки сети')
+    print('Что бы вы хотели узнать?')
     # api
 elif user_choice == "5":
     print('До свидания!')
     exit()
 elif user_choice == "0":
     print('Значит, ты выбрал смерть...')
+
 
