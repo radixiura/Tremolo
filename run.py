@@ -7,11 +7,11 @@ def create_connection(db_name, db_user, db_password, db_host, db_port):
     connection = None
     try:
         connection = psycopg2.connect(
-            database = db_name,
-            user = db_user,
-            password = db_password,
-            host = db_host,
-            port = db_port,
+            database=db_name,
+            user=db_user,
+            password=db_password,
+            host=db_host,
+            port=db_port,
         )
         print('Connection to PostgreSQL DB sucessful')
     except OperationalError as e:
@@ -58,8 +58,10 @@ CREATE TABLE IF NOT EXISTS users(
 execute_query(connection, create_users_table)
 
 
-print('Привет!')
-print('Рад видеть тебя.')
+def privetstvie():
+    print("Привет.")
+    print("Рад видеть тебя.")
+privetstvie()
 answer1 = input('Ты уже имеешь аккаунт?: ')
 if answer1 == 'Да':
     print('Отлично.')
@@ -85,9 +87,8 @@ if answer1 == 'Да':
         print('Узнать свои настройки сети - 4')
         print('Завершить работу - 5')
         print('Связаться с разработчиком - 0')
-
-
-    p = menu()
+    menu()
+    
 else:
     print('Думаю, тебе стоит зарегистрироваться.')
     new_user_login = input('Введи свой новый логин')
@@ -111,14 +112,7 @@ else:
     print('Отлично, ты зарегистрирован.')
 
 
-    def menu():
-        print('Выбери, что бы ты хотел сделать?')
-        print('Написать другу - 1')
-        print('Узнать курс BTC - 2')
-        print('Узнать свой ip - адрес - 3')
-        print('Узнать свои настройки сети - 4')
-        print('Завершить работу - 5')
-        print('Связаться с разработчиком - 0')
+    menu()
 
 if user_choice == 1:
     print('Введи логин своего знакомого')
