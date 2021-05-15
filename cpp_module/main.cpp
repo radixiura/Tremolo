@@ -1,5 +1,8 @@
 #include <iostream>
 #include <cstdio>
+#include <string>
+
+//Классы, используемые в программе.
 
 struct User
 {
@@ -8,16 +11,37 @@ struct User
   char keyword[256];
 };
 
+//Функции, используемые в программе.
+
 int greeting()
 {
-  printf("Привет.");
-  printf("Рад видеть тебя.");
+  printf("Привет.\n");
+  printf("Рад видеть тебя.\n");
+  return 0;
+}
+
+int main_menu()
+{
+  printf("Меню:\n");
+  printf("Отправить сообщение - 1\n");
+  printf("Узнать курс BTC - 2\n");
+  printf("Узнать свой ip - адрес - 3\n");
+  printf("Настройки аккаунта - 4\n");
+  printf("Узнать больше о программе - 5\n");
+  printf("Завершить работу - 6\n");
+  printf("Связаться с разработчиком - 0\n");
   return 0;
 }
 
 int main()
 {
+  using namespace std;
   greeting();
-  
+  cout << "Ты уже имеешь аккаунт?" << endl;
+  string user_answer;
+  cin >> user_answer;
+
+  main_menu();
+
   return 0;
 }
