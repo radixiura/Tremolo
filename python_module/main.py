@@ -1,3 +1,5 @@
+import requests
+import bs4
 def menu():
     print('Меню:')
     print('Отправить сообщение - 1')
@@ -57,18 +59,24 @@ user_choice = input("Выберите действие: ")
 
 if user_choice == "1":
     print('Введи логин своего знакомого')
-    new_request = input()
     # if new_request exists in BD and everything is ok:
     # print('Соединение успешно установлено.')
     # Начало переписки
     # if new_request not exists in BD:
     # print('Данный логин не найден.')
 elif user_choice == "2":
-    print('Актуальный курс биткоина')
-    # api
+    response = requests.get('https://apirone.com/api/v2/ticker?currency=btc')
+    if response:
+        print('Отчет по курсу BTC к валютам готов.')
+    else:
+        print('Произошла ошибка.')
+    print(response.text)
 elif user_choice == "3":
     print("Ваш текущий ip-адрес")
-    # api
+    s = requests.get('https://2ip.ua/ru/')
+    b = bs4.BeautifulSoup(s.text, "html.parser")
+    a = b.select(" .ipblockgradient .ip")[0].getText()
+    print(a)
 elif user_choice == "4":
     print('Ваши текущие настройки сети')
     # api
@@ -77,5 +85,4 @@ elif user_choice == "5":
     exit()
 elif user_choice == "0":
     print('Значит, ты выбрал смерть...')
-
 
