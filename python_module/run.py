@@ -7,11 +7,14 @@ def menu():
     print('Завершить работу - 5')
     print('Связаться с разработчиком - 0')
 
-def privetstvie():
+def greeting():
     print("Привет.")
     print("Рад видеть тебя.")
-privetstvie()
+
+greeting()
+
 answer1 = input('Ты уже имеешь аккаунт?: ')
+
 if answer1 == 'Да':
     print('Отлично.')
     old_user_login = input("Введите ваш логин: ")
@@ -37,6 +40,8 @@ else:
     print('Ваш новый логин - ', new_user_login)
     print('Самое время придумать пароль! Рекомендуем использовать пароль, состоящий более чем из 8ми символов.')
     new_user_password = input('Введи свой новый пароль')
+    number_of_characters = len(new_user_password)
+    print("Количество символов в вашем новом пароле: ", number_of_characters)
     print('Подтвердите ваш пароль')
     new_user_password_confirmation = input()
     while new_user_password != new_user_password_confirmation:
@@ -47,7 +52,9 @@ else:
     print('Отлично, ты зарегистрирован.')
 
 menu()
+
 user_choice = input()
+
 if user_choice == 1:
     print('Введи логин своего знакомого')
     new_request = input()
