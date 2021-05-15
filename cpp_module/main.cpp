@@ -37,7 +37,7 @@ int main()
 {
   using namespace std;
   greeting();
-  cout << "Ты уже имеешь аккаунт?" << endl;
+  cout << "Ты уже имеешь аккаунт?: ";
   string user_answer;
   cin >> user_answer;
 
