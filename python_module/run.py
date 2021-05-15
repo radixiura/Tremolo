@@ -1,5 +1,5 @@
 def menu():
-    print('Выбери, что бы ты хотел сделать?')
+    print('Меню:')
     print('Отправить сообщение - 1')
     print('Узнать курс BTC - 2')
     print('Узнать свой ip - адрес - 3')
@@ -39,7 +39,7 @@ else:
     # break
     print('Ваш новый логин - ', new_user_login)
     print('Самое время придумать пароль! Рекомендуем использовать пароль, состоящий более чем из 8ми символов.')
-    new_user_password = input('Введи свой новый пароль')
+    new_user_password = input('Введи свой новый пароль: ')
     number_of_characters = len(new_user_password)
     print("Количество символов в вашем новом пароле: ", number_of_characters)
     print('Подтвердите ваш пароль')
@@ -53,9 +53,9 @@ else:
 
 menu()
 
-user_choice = input()
+user_choice = input("Выберите действие: ")
 
-if user_choice == 1:
+if user_choice == "1":
     print('Введи логин своего знакомого')
     new_request = input()
     # if new_request exists in BD and everything is ok:
@@ -63,18 +63,19 @@ if user_choice == 1:
     # Начало переписки
     # if new_request not exists in BD:
     # print('Данный логин не найден.')
-elif user_choice == 2:
+elif user_choice == "2":
     print('Актуальный курс биткоина')
     # api
-elif user_choice == 3:
+elif user_choice == "3":
     print("Ваш текущий ip-адрес")
     # api
-elif user_choice == 4:
+elif user_choice == "4":
     print('Ваши текущие настройки сети')
     # api
-elif user_choice == 5:
+elif user_choice == "5":
     print('До свидания!')
     exit()
-elif user_choice == 0:
-    print('Реще')
-    # api
+elif user_choice == "0":
+    print('Значит, ты выбрал смерть...')
+
+
