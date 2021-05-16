@@ -32,6 +32,19 @@ int old_user_authentication()
   return 0;
 }
 
+int new_user_registration()
+{
+  using namespace std;
+  string new_user_login;
+  cin >> new_user_login;
+  cout << "Ваш логин - " << new_user_login << endl;
+  string new_user_password;
+  cout << "Самое время придумать пароль! Он должен быть на английском и содержать более 8ми символов.: ";
+  cin >> new_user_password;
+  cout << "Количество символов в вашем пароле: " << new_user_password.length() << endl;
+  return 0; 
+}
+
 int main_menu()
 {
   printf("Меню:\n");
@@ -55,11 +68,12 @@ int main()
   switch(user_answer)
   {
   case 1:
-    printf("Введите свой логин: \n");
+    printf("Введите свой логин: ");
     old_user_authentication();
     break;
   case 0:
-    printf("Введите свой новый логин: \n");
+    printf("Самое время зарегистрироваться. Введите свой новый логин: ");
+    new_user_registration();
     break;
   default:
     printf("Введи 1 или 0.");
