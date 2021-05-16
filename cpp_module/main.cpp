@@ -36,6 +36,7 @@ int main_menu()
 int main()
 {
   using namespace std;
+  setlocale(LC_ALL, "Russian");
   greeting();
   cout << "Ты уже имеешь аккаунт?: ";
   string user_answer;
