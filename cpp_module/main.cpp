@@ -20,6 +20,18 @@ int greeting()
   return 0;
 }
 
+int old_user_authentication()
+{
+  using namespace std;
+  string old_user_login;
+  cin >> old_user_login;
+  cout << "Ваш логин - " << old_user_login << endl;
+  string old_user_password;
+  cout << "Введите пароль: ";
+  cin >> old_user_password;
+  return 0;
+}
+
 int main_menu()
 {
   printf("Меню:\n");
@@ -36,12 +48,23 @@ int main_menu()
 int main()
 {
   using namespace std;
-  setlocale(LC_ALL, "Russian");
   greeting();
-  cout << "Ты уже имеешь аккаунт?: ";
-  string user_answer;
+  cout << "Ты уже имеешь аккаунт? Введи 1 если да, 0 если нет: ";
+  int user_answer;
   cin >> user_answer;
-
+  switch(user_answer)
+  {
+  case 1:
+    printf("Введите свой логин: \n");
+    old_user_authentication();
+    break;
+  case 0:
+    printf("Введите свой новый логин: \n");
+    break;
+  default:
+    printf("Введи 1 или 0.");
+    break;
+  }
   main_menu();
 
   return 0;
