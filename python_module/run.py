@@ -14,7 +14,7 @@ if user_answer == 'Да':
     #   pass
     # else:
     #   print('Данный логин не найден в базе данных. Попробуете ввести логин еще раз?: ')
-    print('Ваш логин - ' + old_user_login)
+    print('Ваш логин: ' + old_user_login)
     old_user_password = input("Введите ваш пароль: ")
     # if old_user_password exist in DB:
     #   pass
