@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdio>
-#include <string>
+#include <cstring>
 
 //Классы, используемые в программе.
 
@@ -38,10 +38,19 @@ int new_user_registration()
   string new_user_login;
   cin >> new_user_login;
   cout << "Ваш логин - " << new_user_login << endl;
-  string new_user_password;
   cout << "Самое время придумать пароль! Он должен быть на английском и содержать более 8ми символов.: ";
+  string new_user_password;
   cin >> new_user_password;
-  cout << "Количество символов в вашем пароле: " << new_user_password.length() << endl;
+  printf("Введите ваш новый пароль еще раз: ");
+  string new_user_password_confirmation;
+  cin >> new_user_password_confirmation;
+  while (new_user_password != new_user_password_confirmation)
+  {
+    printf("Введенные пароли не сходятся. Попробуйте еще раз.\n");
+    printf("Введите ваш новый пароль еще раз: ");
+    cin >> new_user_password_confirmation;
+  }
+  cout << "Количество символов в вашем пароле: " << sizeof(new_user_password) << endl;
   return 0; 
 }
 
