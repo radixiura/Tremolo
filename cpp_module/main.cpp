@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cstring>
+#include <ctime>
 
 //Классы, используемые в программе.
 
@@ -23,12 +24,10 @@ int greeting()
 int old_user_authentication()
 {
   using namespace std;
-  string old_user_login;
-  cin >> old_user_login;
+  string old_user_login; cin >> old_user_login;
   cout << "Ваш логин - " << old_user_login << endl;
-  string old_user_password;
   cout << "Введите пароль: ";
-  cin >> old_user_password;
+  string old_user_password; cin >> old_user_password;
   return 0;
 }
 
