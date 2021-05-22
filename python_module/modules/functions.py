@@ -50,7 +50,7 @@ def menu5():
     elif user_choice5 == "3":
         print("Основной задачей Tremolo является скорейший гешефт.")
     elif user_choice5 == "0":
-        print("НАЗАД БЛЯДЬ")
+        print("НАЗАД")
         
 def menu6():
     print('До свидания!')
