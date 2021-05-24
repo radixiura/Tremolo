@@ -1,7 +1,7 @@
-import functions
-import postgresql_connection
+from modules import functions
+# from modules import postgresql_connection
 
-postgresql_connection.connect_postgresql()
+# postgresql_connection.connect_postgresql()
 
 functions.greeting()
 
@@ -21,8 +21,8 @@ if user_answer == 'Да':
     # else:
     #   print('Пароль введен неверно. Попробуете ввести пароль еще раз?: ')
 else:
-    print('Думаю, тебе стоит зарегистрироваться.')
-    new_user_login = input('Введи свой новый логин: ')
+    print("Думаю, вам стоит зарегистрироваться. Ваш новый логин должен содержать более 8 символов")
+    new_user_login = input("Введите ваш новый логин: ")
     # while new_user_login exists in BD
     # print('Этот логин уже занят')
     # print('Попробуйте ввести другой')
@@ -31,7 +31,7 @@ else:
     # break
     print('Ваш новый логин - ', new_user_login)
     print('Самое время придумать пароль! Он должен содержать более 8 символов.')
-    new_user_password = input('Введи свой новый пароль: ')
+    new_user_password = input("Введите ваш новый пароль: ")
     while len(new_user_password) <= 8:
         print('Пароль должен содержать более 8ми символов.')
         new_user_password = input()
