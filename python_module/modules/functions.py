@@ -16,8 +16,15 @@ def main_menu():
     print("Связаться с разработчиком - 0")
     
 def menu1():
-    print("lalala")
-    
+    print("Общение это прекрасно.")
+    login_for_new_message = input("Введите логин, на который нужно отправить сообщение: ")
+    # if login_for_new_message exists in DB
+    #   new_message = input("Введите текст вашего сообщения: ")
+    # elif login_for_new_message not exists in DB
+    #   print("Введенного логина не существует в нашей базе данных! Возможно, пользователь сменил логин, либо вы ввели его неправильно. Попробуйте ввести еще раз")
+    # else:
+    #   print("Произошла ошибка")
+
 def menu2():
     response = requests.get('https://apirone.com/api/v2/ticker?currency=btc')
     if response:
