@@ -98,14 +98,37 @@ int case4()
   {
     case 1:
       printf("Для продолжения введите ваш пароль: ");
+      {
       string password_confirmation; cin >> password_confirmation;
       while(password_confirmation != password)
       {
         printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
         cout << "Введите пароль: "; cin >> password_confirmation;
       }
-    break;
+      printf("Введите ваш новый логин: "); cin >> login;
+      printf("Логин успешно изменен!");
+      }
+      break;
+    case 2:
+      printf("Для продолжения введите ваш пароль: ");
+      {
+      string password_confirmation; cin >> password_confirmation;
+      while(password_confirmation != password)
+      {
+        printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
+        cout << "Введите пароль: "; cin >> password_confirmation;
+      }
+      printf("Введите ваш новый пароль: "); cin >> password;
+      printf("Пароль успешно изменен!");
+      }
+      break;
+    case 3:
+      printf("Вставьте ссылку на ваш новый аватар");
+      break;
+    case 4;
+      printf
   }
+  return 0;
 }
 
 int case5()
