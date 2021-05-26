@@ -3,6 +3,9 @@
 #include <cstring>
 #include <ctime>
 
+std::string login;
+std::string password;
+
 //Классы, используемые в программе.
 
 struct User
@@ -29,6 +32,7 @@ int new_user_registration()
     cout << "Введите пароль: "; cin >> new_user_password_confirmation;
   }
   cout << "Количество символов в вашем пароле: " << sizeof(new_user_password) << endl;
+  new_user_login = login; new_user_password = password;
   return 0; 
 }
 
@@ -39,6 +43,7 @@ int old_user_authentication()
   cout << "Ваш логин - " << old_user_login << endl;
   cout << "Введите пароль: ";
   string old_user_password; cin >> old_user_password;
+  old_user_login = login; old_user_password = password;
   return 0;
 }
 
@@ -59,9 +64,6 @@ int greeting()
     printf("Самое время зарегистрироваться. Введите ваш новый логин: ");
     new_user_registration();
     break;
-  default:
-    printf("Введи 1 или 0.");
-    break;
   }
   return 0;
 }
@@ -81,6 +83,31 @@ int main_menu()
   return 0;
 }
 
+int case4()
+{
+  using namespace std;
+  printf("Что бы вы хотели настроить?\n");
+  printf("Изменить логин - 1\n");
+  printf("Изменить пароль - 2\n");
+  printf("Изменить аватар - 3\n");
+  printf("Удалить аккаунт - 4\n");
+  printf("Назад - 0\n");
+  printf("Введите 1, 2, 3, 4 или 0: ");
+  int user_choice4; cin >> user_choice4;
+  switch(user_choice4)
+  {
+    case 1:
+      printf("Для продолжения введите ваш пароль: ");
+      string password_confirmation; cin >> password_confirmation;
+      while(password_confirmation != password)
+      {
+        printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
+        cout << "Введите пароль: "; cin >> password_confirmation;
+      }
+    break;
+  }
+}
+
 int case5()
 {
   using namespace std;
@@ -90,8 +117,7 @@ int case5()
   printf("Цели и задачи Tremolo - 3\n");
   printf("Назад - 0\n");
   printf("Введите 1, 2, 3 или 0: ");
-  int user_choice5;
-  cin >> user_choice5;
+  int user_choice5; cin >> user_choice5;
   switch(user_choice5)
   {
     case 1:
@@ -129,7 +155,7 @@ int templatemo()
       //api
       break;
     case 4:
-      printf("Что бы вы хотели настроить?");
+      case4();
     case 5:
       case5();
     case 6:
