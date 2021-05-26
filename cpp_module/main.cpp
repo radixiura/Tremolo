@@ -125,8 +125,18 @@ int case4()
     case 3:
       printf("Вставьте ссылку на ваш новый аватар");
       break;
-    case 4;
-      printf
+    case 4:
+      printf("Для продолжения введите ваш пароль: ");
+      {
+      string password_confirmation; cin >> password_confirmation;
+      while(password_confirmation != password)
+      {
+        printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
+        cout << "Введите пароль: "; cin >> password_confirmation;
+      }
+      printf("Ваш аккаунт удален. До свидания!");
+      }
+      break;
   }
   return 0;
 }
