@@ -7,18 +7,29 @@
 
 struct User
 {
-  char login[256];
-  char password[256];
-  char keyword[256];
+  std::string login;
+  std::string password;
+  std::string keyword;
 };
 
 //Функции, используемые в программе.
 
-int greeting()
+int new_user_registration()
 {
-  printf("Привет.\n");
-  printf("Рад видеть тебя.\n");
-  return 0;
+  using namespace std;
+  string new_user_login; cin >> new_user_login;
+  cout << "Ваш новый логин - " << new_user_login << endl;
+  printf("Самое время придумать пароль! Он должен быть на английском и содержать более 8ми символов.: ");
+  string new_user_password; cin >> new_user_password;
+  printf("Введите ваш новый пароль еще раз: ");
+  string new_user_password_confirmation; cin >> new_user_password_confirmation;
+  while (new_user_password != new_user_password_confirmation)
+  {
+    printf("Введенные пароли не сходятся. Попробуйте еще раз.\n");
+    cout << "Введите пароль: "; cin >> new_user_password_confirmation;
+  }
+  cout << "Количество символов в вашем пароле: " << sizeof(new_user_password) << endl;
+  return 0; 
 }
 
 int old_user_authentication()
@@ -31,26 +42,28 @@ int old_user_authentication()
   return 0;
 }
 
-int new_user_registration()
+int greeting()
 {
   using namespace std;
-  string new_user_login;
-  cin >> new_user_login;
-  cout << "Ваш логин - " << new_user_login << endl;
-  cout << "Самое время придумать пароль! Он должен быть на английском и содержать более 8ми символов.: ";
-  string new_user_password;
-  cin >> new_user_password;
-  printf("Введите ваш новый пароль еще раз: ");
-  string new_user_password_confirmation;
-  cin >> new_user_password_confirmation;
-  while (new_user_password != new_user_password_confirmation)
+  printf("Привет.\n");
+  printf("Рад видеть тебя.\n");
+  printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
+  int user_answer; cin >> user_answer;
+  switch(user_answer)
   {
-    printf("Введенные пароли не сходятся. Попробуйте еще раз.\n");
-    printf("Введите ваш новый пароль еще раз: ");
-    cin >> new_user_password_confirmation;
+  case 1:
+    printf("Введите свой логин: ");
+    old_user_authentication();
+    break;
+  case 0:
+    printf("Самое время зарегистрироваться. Введите ваш новый логин: ");
+    new_user_registration();
+    break;
+  default:
+    printf("Введи 1 или 0.");
+    break;
   }
-  cout << "Количество символов в вашем пароле: " << sizeof(new_user_password) << endl;
-  return 0; 
+  return 0;
 }
 
 int main_menu()
@@ -136,26 +149,9 @@ int user_answer_from_main_menu()
 
 int main()
 {
-  setlocale(LC_ALL, "Russian");
   using namespace std;
+  setlocale(LC_ALL, "Russian");
   greeting();
-  cout << "Ты уже имеешь аккаунт? Введи 1 если да, 0 если нет: ";
-  int user_answer;
-  cin >> user_answer;
-  switch(user_answer)
-  {
-  case 1:
-    printf("Введите свой логин: ");
-    old_user_authentication();
-    break;
-  case 0:
-    printf("Самое время зарегистрироваться. Введите свой новый логин: ");
-    new_user_registration();
-    break;
-  default:
-    printf("Введи 1 или 0.");
-    break;
-  }
   main_menu();
   user_answer_from_main_menu();
   return 0;
