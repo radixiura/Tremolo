@@ -16,7 +16,6 @@ def main_menu():
     print("Связаться с разработчиком - 0")
     
 def menu1():
-    print("Общение это прекрасно.")
     login_for_new_message = input("Введите логин, на который нужно отправить сообщение: ")
     # if login_for_new_message exists in DB
     #   new_message = input("Введите текст вашего сообщения: ")
