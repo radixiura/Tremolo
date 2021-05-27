@@ -3,7 +3,7 @@ import bs4
 
 def greeting():
     print("Привет.")
-    print("Рад видеть тебя.")
+    print("Рад видеть вас.")
     
 def main_menu():
     print("Меню:")
