@@ -1,18 +1,16 @@
 #include <iostream>
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
 #include <ctime>
 
-std::string login;
-std::string password;
-
 //Классы, используемые в программе.
 
-struct User
+class User
 {
-  std::string login;
-  std::string password;
-  std::string keyword;
+  public:
+    std::string user_login;
+    std::string user_password;
 };
 
 //Функции, используемые в программе.
@@ -32,7 +30,7 @@ int new_user_registration()
     cout << "Введите пароль: "; cin >> new_user_password_confirmation;
   }
   cout << "Количество символов в вашем пароле: " << sizeof(new_user_password) << endl;
-  new_user_login = login; new_user_password = password;
+  User chel {new_user_login, new_user_password};
   return 0; 
 }
 
@@ -43,7 +41,9 @@ int old_user_authentication()
   cout << "Ваш логин - " << old_user_login << endl;
   cout << "Введите пароль: ";
   string old_user_password; cin >> old_user_password;
-  old_user_login = login; old_user_password = password;
+  User chel {old_user_login, old_user_password};
+  string x = chel.user_login;
+  cout << x;
   return 0;
 }
 
@@ -70,7 +70,6 @@ int greeting()
 
 int main_menu()
 {
-  using namespace std;
   printf("Меню:\n");
   printf("Отправить сообщение - 1\n");
   printf("Узнать курс BTC - 2\n");
@@ -80,6 +79,26 @@ int main_menu()
   printf("Завершить работу - 6\n");
   printf("Связаться с разработчиком - 0\n");
   printf("Введите 1, 2, 3, 4, 5, 6 или 0: ");
+  return 0;
+}
+
+int case1()
+{
+  using namespace std;
+  printf("Введите логин, на который нужно отправить сообщение: ");
+  string login_to_message; cin >> login_to_message;
+  return 0;
+}
+
+int case2()
+{
+  //api
+  return 0;
+}
+
+int case3()
+{
+  //api
   return 0;
 }
 
@@ -100,12 +119,12 @@ int case4()
       printf("Для продолжения введите ваш пароль: ");
       {
       string password_confirmation; cin >> password_confirmation;
-      while(password_confirmation != password)
+      //while(password_confirmation != User.chel.user_password)
       {
         printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
         cout << "Введите пароль: "; cin >> password_confirmation;
       }
-      printf("Введите ваш новый логин: "); cin >> login;
+      //printf("Введите ваш новый логин: "); cin >> User.chel.user_login;
       printf("Логин успешно изменен!");
       }
       break;
@@ -113,12 +132,12 @@ int case4()
       printf("Для продолжения введите ваш пароль: ");
       {
       string password_confirmation; cin >> password_confirmation;
-      while(password_confirmation != password)
+      //while(password_confirmation != User.chel.user_password)
       {
         printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
         cout << "Введите пароль: "; cin >> password_confirmation;
       }
-      printf("Введите ваш новый пароль: "); cin >> password;
+      //printf("Введите ваш новый пароль: "); cin >> User.chel.user_password;
       printf("Пароль успешно изменен!");
       }
       break;
@@ -129,12 +148,13 @@ int case4()
       printf("Для продолжения введите ваш пароль: ");
       {
       string password_confirmation; cin >> password_confirmation;
-      while(password_confirmation != password)
+      //while(password_confirmation != User.chel.user_password)
       {
         printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
         cout << "Введите пароль: "; cin >> password_confirmation;
       }
       printf("Ваш аккаунт удален. До свидания!");
+      exit(1);
       }
       break;
   }
@@ -169,6 +189,12 @@ int case5()
   return 0;
 }
 
+int case6()
+{
+  //std::cout << "До свидания, " << User.chel.user_login << "!";
+  exit(1);
+}
+
 int templatemo()
 {
   using namespace std;
@@ -177,23 +203,22 @@ int templatemo()
   switch(user_choice_from_main_menu)
   {
     case 1:
-      printf("lalala");
-      //функция
+      case1();
+      break;
     case 2:
-      printf("Отчет по курсу BTC к валютам.\n");
-      //api
+      case2();
       break;
     case 3:
-      printf("Ваш текущий ip-адрес");
-      //api
+      case4();
       break;
     case 4:
       case4();
+      break;
     case 5:
       case5();
+      break;
     case 6:
-      printf("До свидания!");
-      //Выход
+      case6();
       break;
   }
   return 0;
