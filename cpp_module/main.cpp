@@ -4,7 +4,7 @@
 #include <cstring>
 #include <ctime>
 
-//Классы, используемые в программе.
+//Классы, используемые в программе:
 
 class User
 {
@@ -13,74 +13,16 @@ class User
     std::string user_password;
 };
 
-//Функции, используемые в программе.
-
-int new_user_registration()
+class Already_existing_users
 {
-  using namespace std;
-  string new_user_login; cin >> new_user_login;
-  cout << "Ваш новый логин - " << new_user_login << endl;
-  printf("Самое время придумать пароль! Он должен быть на английском и содержать более 8ми символов.: ");
-  string new_user_password; cin >> new_user_password;
-  printf("Введите ваш новый пароль еще раз: ");
-  string new_user_password_confirmation; cin >> new_user_password_confirmation;
-  while (new_user_password != new_user_password_confirmation)
-  {
-    printf("Введенные пароли не сходятся. Попробуйте еще раз.\n");
-    cout << "Введите пароль: "; cin >> new_user_password_confirmation;
-  }
-  cout << "Количество символов в вашем пароле: " << sizeof(new_user_password) << endl;
-  User chel {new_user_login, new_user_password};
-  return 0; 
-}
+  public:
+    std::string already_existing_user_login;
+    std::string already_existing_user_password;
+};
 
-int old_user_authentication()
-{
-  using namespace std;
-  string old_user_login; cin >> old_user_login;
-  cout << "Ваш логин - " << old_user_login << endl;
-  cout << "Введите пароль: ";
-  string old_user_password; cin >> old_user_password;
-  User chel {old_user_login, old_user_password};
-  string x = chel.user_login;
-  cout << x;
-  return 0;
-}
+//Функции, используемые в программе:
 
-int greeting()
-{
-  using namespace std;
-  printf("Привет.\n");
-  printf("Рад видеть тебя.\n");
-  printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
-  int user_answer; cin >> user_answer;
-  switch(user_answer)
-  {
-  case 1:
-    printf("Введите свой логин: ");
-    old_user_authentication();
-    break;
-  case 0:
-    printf("Самое время зарегистрироваться. Введите ваш новый логин: ");
-    new_user_registration();
-    break;
-  }
-  return 0;
-}
-
-int main_menu()
-{
-  printf("Меню:\n");
-  printf("Отправить сообщение - 1\n");
-  printf("Узнать курс BTC - 2\n");
-  printf("Узнать свой ip - адрес - 3\n");
-  printf("Настройки аккаунта - 4\n");
-  printf("Узнать больше о программе - 5\n");
-  printf("Завершить работу - 6\n");
-  printf("Связаться с разработчиком - 0\n");
-  printf("Введите 1, 2, 3, 4, 5, 6 или 0: ");
-  return 0;
-}
+//Функции выбора пользователя из меню:
 
 int case1()
 {
@@ -195,9 +137,72 @@ int case6()
   exit(1);
 }
 
-int user_answer_from_main_menu()
+//Функции регистрации и авторизации:
+
+int new_user_registration()
 {
   using namespace std;
+  string new_user_login; cin >> new_user_login;
+  cout << "Ваш новый логин - " << new_user_login << endl;
+  printf("Самое время придумать пароль! Он должен быть на английском и содержать более 8ми символов.: ");
+  string new_user_password; cin >> new_user_password;
+  printf("Введите ваш новый пароль еще раз: ");
+  string new_user_password_confirmation; cin >> new_user_password_confirmation;
+  while (new_user_password != new_user_password_confirmation)
+  {
+    printf("Введенные пароли не сходятся. Попробуйте еще раз.\n");
+    cout << "Введите пароль: "; cin >> new_user_password_confirmation;
+  }
+  cout << "Количество символов в вашем пароле: " << sizeof(new_user_password) << endl;
+  User chel {new_user_login, new_user_password};
+  return 0; 
+}
+
+int old_user_authentication()
+{
+  using namespace std;
+  string old_user_login; cin >> old_user_login;
+  cout << "Ваш логин - " << old_user_login << endl;
+  cout << "Введите пароль: ";
+  string old_user_password; cin >> old_user_password;
+  User chel {old_user_login, old_user_password};
+  return 0;
+}
+
+int greeting()
+{
+  using namespace std;
+  printf("Привет!\n");
+  printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
+  int user_answer; cin >> user_answer;
+  switch(user_answer)
+  {
+  case 1:
+    printf("Введите свой логин: ");
+    old_user_authentication();
+    break;
+  case 0:
+    printf("Самое время зарегистрироваться. Введите ваш новый логин: ");
+    new_user_registration();
+    break;
+  }
+  return 0;
+}
+
+//Функции основные:
+
+int main_menu()
+{
+  using namespace std;
+  printf("Меню:\n");
+  printf("Отправить сообщение - 1\n");
+  printf("Узнать курс BTC - 2\n");
+  printf("Узнать свой ip - адрес - 3\n");
+  printf("Настройки аккаунта - 4\n");
+  printf("Узнать больше о программе - 5\n");
+  printf("Завершить работу - 6\n");
+  printf("Связаться с разработчиком - 0\n");
+  printf("Введите 1, 2, 3, 4, 5, 6 или 0: ");
   int user_choice_from_main_menu;
   cin >> user_choice_from_main_menu;
   switch(user_choice_from_main_menu)
@@ -221,6 +226,7 @@ int user_answer_from_main_menu()
       case6();
       break;
   }
+  main_menu();
   return 0;
 }
 
@@ -230,6 +236,5 @@ int main()
   setlocale(LC_ALL, "Russian");
   greeting();
   main_menu();
-  user_answer_from_main_menu();
   return 0;
 }
