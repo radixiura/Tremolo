@@ -195,7 +195,7 @@ int case6()
   exit(1);
 }
 
-int templatemo()
+int user_answer_from_main_menu()
 {
   using namespace std;
   int user_choice_from_main_menu;
@@ -221,13 +221,6 @@ int templatemo()
       case6();
       break;
   }
-  return 0;
-}
-
-int user_answer_from_main_menu()
-{
-  using namespace std;
-  templatemo();
   return 0;
 }
 
