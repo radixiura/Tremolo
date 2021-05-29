@@ -137,6 +137,12 @@ int case6()
   exit(1);
 }
 
+int case0()
+{
+  printf("В настоящий момент я хикканю и у меня нет желания говорить.\n");
+  return 0;
+}
+
 //Функции регистрации и авторизации:
 
 int new_user_registration()
@@ -174,7 +180,7 @@ int greeting()
   using namespace std;
   printf("Привет!\n");
   printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
-  int user_answer; cin >> user_answer;
+  static int user_answer; cin >> user_answer;
   switch(user_answer)
   {
   case 1:
@@ -185,6 +191,9 @@ int greeting()
     printf("Самое время зарегистрироваться. Введите ваш новый логин: ");
     new_user_registration();
     break;
+  default:
+    printf("Вы ввели что - то странное. Попробуйте заново.");
+    greeting();
   }
   return 0;
 }
@@ -209,24 +218,37 @@ int main_menu()
   {
     case 1:
       case1();
+      main_menu();
       break;
     case 2:
       case2();
+      main_menu();
       break;
     case 3:
       case4();
+      main_menu();
       break;
     case 4:
       case4();
+      main_menu();
       break;
     case 5:
       case5();
+      main_menu();
       break;
     case 6:
       case6();
+      main_menu();
+      break;
+    case 0:
+      case0();
+      main_menu();
+      break;
+    default:
+      printf("Вы ввели что - то странное. Возврат к меню.");
+      main_menu();
       break;
   }
-  main_menu();
   return 0;
 }
 
@@ -238,3 +260,9 @@ int main()
   main_menu();
   return 0;
 }
+
+
+// Доработки:
+// 1. При введении не цифры в строке 182, происходит кринж
+// 2. Настроить проверку правильности пароля в case4
+// 3. Подключить python-модули для case2 и case3
