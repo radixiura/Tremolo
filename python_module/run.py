@@ -14,20 +14,3 @@ elif user_answer == "Нет":
 
 
 functions.main_menu()
-
-user_choice = input("Выберите действие: ")
-
-if user_choice == "1":
-    functions.menu1()
-elif user_choice == "2":
-    functions.menu2()
-elif user_choice == "3":
-    functions.menu3()
-elif user_choice == "4":
-    functions.menu4()
-elif user_choice == "5":
-    functions.menu5()
-elif user_choice == "6":
-    functions.menu6()
-elif user_choice == "0":
-    print('Значит, ты выбрал смерть...')
