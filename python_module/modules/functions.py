@@ -16,6 +16,21 @@ def main_menu():
     print("Узнать больше о программе - 5")  # ready
     print("Завершить работу - 6")  # ready
     print("Связаться с разработчиком - 0")
+    user_choice = input("Выберите действие: ")
+    if user_choice == "1":
+        menu1()
+    elif user_choice == "2":
+        menu2()
+    elif user_choice == "3":
+        menu3()
+    elif user_choice == "4":
+        menu4()
+    elif user_choice == "5":
+        menu5()
+    elif user_choice == "6":
+        menu6()
+    elif user_choice == "0":
+        print('Значит, ты выбрал смерть...')
 
 
 def old_user_registration():
@@ -31,6 +46,9 @@ def old_user_registration():
     #   pass
     # else:
     #   print('Пароль введен неверно. Попробуете ввести пароль еще раз?: ')
+    password = open('password.txt', 'w')
+    password.write(old_user_password)  # Добавить хеширование
+    password.close()
 
 
 def new_user_registration():
@@ -60,6 +78,9 @@ def new_user_registration():
             break
     print("Количество символов в вашем новом пароле: ", number_of_characters)
     print('Отлично, вы зарегистрированы.')
+    password = open('password.txt', 'w')
+    password.write(new_user_password)  # Добавить хеширование
+    password.close()
 
 
 def menu1():
@@ -95,6 +116,28 @@ def menu3():
 
 def menu4():
     print("Что бы вы хотели настроить?")
+    print("Изменить логин - 1")
+    print("Изменить пароль - 2")
+    print("Изменить аватар - 3")
+    print("Удалить аккаунт - 4")
+    print("Назад - 0")
+    user_choice4 = input("Выберите действие: ")
+    if user_choice4 == "1":
+        password_confirmation = input("Для продолжения введите ваш пароль: ")
+        check = open('password.txt', 'r')
+        line = check.readline()
+        if password_confirmation != line:
+            print("Жопа")
+        elif password_confirmation == check:
+            print("Апож")
+    elif user_choice4 == "2":
+        password_confirmation = input("Для продолжения введите ваш пароль: ")
+    elif user_choice4 == "3":
+        print("Вставьте ссылку на ваш новый аватар: ")
+    elif user_choice4 == "4":
+        password_confirmation = input("Для продолжения введите ваш пароль: ")
+        print("Ваш аккаунт удален. До свидания!")
+        exit()
     main_menu()
 
 
