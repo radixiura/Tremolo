@@ -24,7 +24,7 @@ class Already_existing_users
 
 //Функции выбора пользователя из меню:
 
-int case1()
+int case1() 
 {
   using namespace std;
   printf("Введите логин, на который нужно отправить сообщение: ");
@@ -32,13 +32,13 @@ int case1()
   return 0;
 }
 
-int case2()
+int case2() // almost completed
 {
   //api
   return 0;
 }
 
-int case3()
+int case3() // almost completed
 {
   //api
   return 0;
@@ -103,7 +103,7 @@ int case4()
   return 0;
 }
 
-int case5()
+int case5() // completed
 {
   using namespace std;
   printf("Что бы вы хотели узнать?\n");
@@ -116,13 +116,13 @@ int case5()
   switch(user_choice5)
   {
     case 1:
-      printf("В данный момент есть два клиента Tremolo. Один полностью написан на C++, второй на Python3.\n");
+      printf("В данный момент есть два клиента Tremolo. Один полностью написан на C++, второй на Python3. Используемая СУДБ - PostgreSQL. Также, используется некоторая скриптовая поддержка Shell. Графический интерфейс программы построен на библиотеке Qt.\n");
       break;
     case 2:
       printf("Вы можете просто не ныть, если не верите в безопасность нашего чата.\n");
       break;
     case 3:
-      printf("Основной задачей Tremolo является скорейший гешефт.\n");
+      printf("Специально для урегулирования вражды между компилируемыми и интерпретируемыми языками программирования программа для нашего чата написана на c ++ и python.\n");
       break;
     case 0:
       printf("НАЗАД\n");
@@ -131,13 +131,13 @@ int case5()
   return 0;
 }
 
-int case6()
+int case6() // almost completed
 {
   //std::cout << "До свидания, " << User.chel.user_login << "!";
   exit(1);
 }
 
-int case0()
+int case0() // completed
 {
   printf("В настоящий момент я хикканю и у меня нет желания говорить.\n");
   return 0;
@@ -266,3 +266,5 @@ int main()
 // 1. При введении не цифры в строке 182, происходит кринж
 // 2. Настроить проверку правильности пароля в case4
 // 3. Подключить python-модули для case2 и case3
+// 4. Сделать графический интерфейс
+// 5. 
