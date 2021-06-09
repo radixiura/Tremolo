@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <climits>
 #include <ctime>
 
 //Классы, используемые в программе:
@@ -19,6 +20,9 @@ class Already_existing_users
     std::string already_existing_user_login;
     std::string already_existing_user_password;
 };
+
+std::string login;
+std::string password;
 
 //Функции, используемые в программе:
 
@@ -212,8 +216,7 @@ int main_menu()
   printf("Завершить работу - 6\n");
   printf("Связаться с разработчиком - 0\n");
   printf("Введите 1, 2, 3, 4, 5, 6 или 0: ");
-  int user_choice_from_main_menu;
-  cin >> user_choice_from_main_menu;
+  int user_choice_from_main_menu; cin >> user_choice_from_main_menu;
   switch(user_choice_from_main_menu)
   {
     case 1:
@@ -263,7 +266,7 @@ int main()
 
 
 // Доработки:
-// 1. При введении не цифры в строке 182, происходит кринж
+// 1. При введении не цифры в строке 186, происходит кринж
 // 2. Настроить проверку правильности пароля в case4
 // 3. Подключить python-модули для case2 и case3
 // 4. Сделать графический интерфейс
