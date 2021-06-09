@@ -33,6 +33,9 @@ int case1()
   using namespace std;
   printf("Введите логин, на который нужно отправить сообщение: ");
   string login_to_message; cin >> login_to_message;
+  // if login_to_message exists in DB
+  // Try again
+
   return 0;
 }
 
@@ -131,6 +134,9 @@ int case5() // completed
     case 0:
       printf("НАЗАД\n");
       break;
+    default:
+      printf("Вы ввели что - то странное. Возврат к меню.");
+      break;
   }
   return 0;
 }
@@ -152,9 +158,12 @@ int case0() // completed
 int new_user_registration()
 {
   using namespace std;
+  printf("Самое время зарегистрироваться. Введите ваш новый логин: ");
   string new_user_login; cin >> new_user_login;
-  cout << "Ваш новый логин - " << new_user_login << endl;
-  printf("Самое время придумать пароль! Он должен быть на английском и содержать более 8ми символов.: ");
+  // if new_user_login exists in DB
+  // Try again
+  cout << "Ваш новый логин: " << new_user_login << endl;
+  printf("Самое время придумать пароль. Он должен содержать более 8ми символов: ");
   string new_user_password; cin >> new_user_password;
   printf("Введите ваш новый пароль еще раз: ");
   string new_user_password_confirmation; cin >> new_user_password_confirmation;
@@ -163,7 +172,6 @@ int new_user_registration()
     printf("Введенные пароли не сходятся. Попробуйте еще раз.\n");
     cout << "Введите пароль: "; cin >> new_user_password_confirmation;
   }
-  cout << "Количество символов в вашем пароле: " << sizeof(new_user_password) << endl;
   User chel {new_user_login, new_user_password};
   return 0; 
 }
@@ -171,9 +179,10 @@ int new_user_registration()
 int old_user_authentication()
 {
   using namespace std;
+  printf("Введите свой логин: ");
   string old_user_login; cin >> old_user_login;
   cout << "Ваш логин - " << old_user_login << endl;
-  cout << "Введите пароль: ";
+  printf("Введите свой пароль: ");
   string old_user_password; cin >> old_user_password;
   User chel {old_user_login, old_user_password};
   return 0;
@@ -188,11 +197,9 @@ int greeting()
   switch(user_answer)
   {
   case 1:
-    printf("Введите свой логин: ");
     old_user_authentication();
     break;
   case 0:
-    printf("Самое время зарегистрироваться. Введите ваш новый логин: ");
     new_user_registration();
     break;
   default:
@@ -266,7 +273,7 @@ int main()
 
 
 // Доработки:
-// 1. При введении не цифры в строке 186, происходит кринж
+// 1. При введении не цифры в строке 195, происходит кринж
 // 2. Настроить проверку правильности пароля в case4
 // 3. Подключить python-модули для case2 и case3
 // 4. Сделать графический интерфейс
