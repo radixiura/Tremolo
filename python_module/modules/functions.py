@@ -1,10 +1,12 @@
+import sys
 import requests
 import bs4
+from modules import message_sending
+from PyQt5.QtWidgets import (QWidget, QLabel, QLineEdit, QTextEdit, QGridLayout, QApplication)
 
 
 def greeting():
-    print("Привет.")
-    print("Рад видеть вас.")
+    print("Привет!")
 
 
 def main_menu():
@@ -34,14 +36,13 @@ def main_menu():
 
 
 def old_user_registration():
-    print('Отлично.')
-    old_user_login = input("Введите ваш логин: ")
+    old_user_login = input("Введите свой логин: ")
     # if old_user_login exist in DB:
     #   pass
     # else:
     #   print('Данный логин не найден в базе данных. Попробуете ввести логин еще раз?: ')
-    print('Ваш логин: ' + old_user_login)
-    old_user_password = input("Введите ваш пароль: ")
+    print('Ваш логин - ' + old_user_login)
+    old_user_password = input("Введите свой пароль: ")
     # if old_user_password exist in DB:
     #   pass
     # else:
@@ -52,16 +53,15 @@ def old_user_registration():
 
 
 def new_user_registration():
-    print("Думаю, вам стоит зарегистрироваться.")
-    new_user_login = input("Введите ваш новый логин: ")
+    new_user_login = input("Самое время зарегистрироваться. Введите свой новый логин: ")
     # while new_user_login exists in BD
     # print('Этот логин уже занят')
     # print('Попробуйте ввести другой')
     # new_user_login = input()
     # if new_user_login not exists in BD:
     # break
-    print('Ваш новый логин - ', new_user_login)
-    print('Самое время придумать пароль! Он должен содержать более 8 символов.')
+    print("Ваш новый логин - ", new_user_login)
+    print("Самое время придумать пароль. Он должен содержать более 8ми символов.")
     new_user_password = input("Введите ваш новый пароль: ")
     while len(new_user_password) <= 8:
         print('Пароль должен содержать более 8ми символов.')
@@ -86,6 +86,7 @@ def new_user_registration():
 def menu1():
     print("Общение это прекрасно.")
     login_for_new_message = input("Введите логин, на который нужно отправить сообщение: ")
+    send_message()
     # if login_for_new_message exists in DB
     #   new_message = input("Введите текст вашего сообщения: ")
     # elif login_for_new_message not exists in DB
@@ -93,6 +94,51 @@ def menu1():
     # else:
     #   print("Произошла ошибка")
     main_menu()
+
+
+def send_message():
+    class Example(QWidget):
+
+        def __init__(self):
+            super().__init__()
+
+            self.initUI()
+
+
+        def initUI(self):
+
+            title = QLabel('Title')
+            author = QLabel('Author')
+            review = QLabel('Review')
+
+            titleEdit = QLineEdit()
+            authorEdit = QLineEdit()
+            reviewEdit = QTextEdit()
+
+            grid = QGridLayout()
+            grid.setSpacing(10)
+
+            grid.addWidget(title, 1, 0)
+            grid.addWidget(titleEdit, 1, 1)
+
+            grid.addWidget(author, 2, 0)
+            grid.addWidget(authorEdit, 2, 1)
+
+            grid.addWidget(review, 3, 0)
+            grid.addWidget(reviewEdit, 3, 1, 5, 1)
+
+            self.setLayout(grid)
+
+            self.setGeometry(300, 300, 350, 300)
+            self.setWindowTitle('Review')
+            self.show()
+
+
+    if __name__ == '__main__':
+
+        app = QApplication(sys.argv)
+        ex = Example()
+        sys.exit(app.exec_())
 
 
 def menu2():
@@ -142,7 +188,7 @@ def menu4():
 
 
 def menu5():
-    print('Что бы вы хотели узнать?')
+    print("Что бы вы хотели узнать?")
     print('Язык и технологии, используемые при создании Tremolo - 1')
     print('Гарантии безопасности при работе с Tremolo - 2')
     print('Цели и задачи Tremolo - 3')
