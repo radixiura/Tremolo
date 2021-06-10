@@ -158,14 +158,14 @@ int case0() // completed
 int new_user_registration()
 {
   using namespace std;
-  printf("Самое время зарегистрироваться. Введите ваш новый логин: ");
+  printf("Самое время зарегистрироваться. Введите свой новый логин: ");
   string new_user_login; cin >> new_user_login;
   // if new_user_login exists in DB
   // Try again
   cout << "Ваш новый логин: " << new_user_login << endl;
   printf("Самое время придумать пароль. Он должен содержать более 8ми символов: ");
   string new_user_password; cin >> new_user_password;
-  printf("Введите ваш новый пароль еще раз: ");
+  printf("Введите свой новый пароль еще раз: ");
   string new_user_password_confirmation; cin >> new_user_password_confirmation;
   while (new_user_password != new_user_password_confirmation)
   {
