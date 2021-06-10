@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from modules import functions
 # from modules import postgresql_connection
 
@@ -5,12 +7,11 @@ from modules import functions
 
 functions.greeting()
 
-user_answer = input('Ты уже имеешь аккаунт?: ')
+user_answer = input('Вы уже имеете аккаунт?: ')
 
 if user_answer == 'Да':
     functions.old_user_registration()
 elif user_answer == "Нет":
     functions.new_user_registration()
-
 
 functions.main_menu()
