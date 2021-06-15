@@ -5,6 +5,8 @@
 #include <climits>
 #include <ctime>
 
+using namespace std;
+
 //Классы, используемые в программе:
 
 class User
@@ -192,8 +194,14 @@ int greeting()
 {
   using namespace std;
   printf("Привет!\n");
-  printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
+  printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: "); 
   static int user_answer; cin >> user_answer;
+  while ((user_answer != 0) && (user_answer != 1))
+  {
+    printf("Вы ввели что - то странное. Попробуйте заново.\n");
+    printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
+    cin >> user_answer;
+  }
   switch(user_answer)
   {
   case 1:
@@ -264,7 +272,6 @@ int main_menu()
 
 int main()
 {
-  using namespace std;
   setlocale(LC_ALL, "Russian");
   greeting();
   main_menu();
@@ -273,7 +280,6 @@ int main()
 
 
 // Доработки:
-// 1. При введении не цифры в строке 195, происходит кринж
 // 2. Настроить проверку правильности пароля в case4
 // 3. Подключить python-модули для case2 и case3
 // 4. Сделать графический интерфейс
