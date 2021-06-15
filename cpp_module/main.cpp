@@ -232,6 +232,20 @@ int main_menu()
   printf("Связаться с разработчиком - 0\n");
   printf("Введите 1, 2, 3, 4, 5, 6 или 0: ");
   int user_choice_from_main_menu; cin >> user_choice_from_main_menu;
+  while ((user_choice_from_main_menu != 0) && (user_choice_from_main_menu != 1) &&  (user_choice_from_main_menu != 2) && (user_choice_from_main_menu != 3) && (user_choice_from_main_menu != 4) && (user_choice_from_main_menu != 5) && (user_choice_from_main_menu != 6))
+  {
+    printf("Вы ввели что - то странное. Попробуйте заново.\n");
+    printf("Меню:\n");
+    printf("Отправить сообщение - 1\n");
+    printf("Узнать курс BTC - 2\n");
+    printf("Узнать свой ip - адрес - 3\n");
+    printf("Настройки аккаунта - 4\n");
+    printf("Узнать больше о программе - 5\n");
+    printf("Завершить работу - 6\n");
+    printf("Связаться с разработчиком - 0\n");
+    printf("Введите 1, 2, 3, 4, 5, 6 или 0: ");
+    cin >> user_choice_from_main_menu;
+  }
   switch(user_choice_from_main_menu)
   {
     case 1:
