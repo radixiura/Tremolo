@@ -4,6 +4,7 @@
 #include <cstring>
 #include <climits>
 #include <ctime>
+#include <fstream>
 
 using namespace std;
 
@@ -70,12 +71,17 @@ int case4()
       printf("Для продолжения введите ваш пароль: ");
       {
       string password_confirmation; cin >> password_confirmation;
-      //while(password_confirmation != User.chel.user_password)
+      while(password != password_confirmation)
+      {
+        printf("Пароль введен неверно. Попробуйте еще раз: ");
+        cin >> password_confirmation;
+      }
       {
         printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
         cout << "Введите пароль: "; cin >> password_confirmation;
       }
       //printf("Введите ваш новый логин: "); cin >> User.chel.user_login;
+      //Блок внесения в базу данных
       printf("Логин успешно изменен!");
       }
       break;
@@ -89,6 +95,7 @@ int case4()
         cout << "Введите пароль: "; cin >> password_confirmation;
       }
       //printf("Введите ваш новый пароль: "); cin >> User.chel.user_password;
+      //Блок внесения в базу данных
       printf("Пароль успешно изменен!");
       }
       break;
@@ -104,6 +111,7 @@ int case4()
         printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
         cout << "Введите пароль: "; cin >> password_confirmation;
       }
+      //Удаление в базе данных
       printf("Ваш аккаунт удален. До свидания!");
       exit(1);
       }
@@ -174,6 +182,8 @@ int new_user_registration()
     printf("Введенные пароли не сходятся. Попробуйте еще раз.\n");
     cout << "Введите пароль: "; cin >> new_user_password_confirmation;
   }
+  static string login = new_user_login; 
+  static string password = new_user_password;
   User chel {new_user_login, new_user_password};
   return 0; 
 }
@@ -186,6 +196,8 @@ int old_user_authentication()
   cout << "Ваш логин - " << old_user_login << endl;
   printf("Введите свой пароль: ");
   string old_user_password; cin >> old_user_password;
+  static string login = old_user_login;
+  static string password = old_user_password;
   User chel {old_user_login, old_user_password};
   return 0;
 }
@@ -297,4 +309,4 @@ int main()
 // 2. Настроить проверку правильности пароля в case4
 // 3. Подключить python-модули для case2 и case3
 // 4. Сделать графический интерфейс
-// 5. 
+// 5. Настроить интеграцию с БД
