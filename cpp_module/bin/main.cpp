@@ -9,8 +9,8 @@
 #include "user.hpp"
 #include "already_existing_user.hpp"
 
-std::string login;
-std::string password;
+std::char login;
+std::char password;
 
 //Функции, используемые в программе:
 
@@ -20,7 +20,7 @@ int case1()
 {
   using namespace std;
   printf("Введите логин, на который нужно отправить сообщение: ");
-  string login_to_message; cin >> login_to_message;
+  char login_to_message; cin >> login_to_message;
   // if login_to_message exists in DB
   // Try again
 
@@ -55,7 +55,7 @@ int case4()
     case 1:
       printf("Для продолжения введите ваш пароль: ");
       {
-      string password_confirmation; cin >> password_confirmation;
+      char password_confirmation; cin >> password_confirmation;
       //while(password_confirmation != User.chel.user_password)
       {
         printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
@@ -68,7 +68,7 @@ int case4()
     case 2:
       printf("Для продолжения введите ваш пароль: ");
       {
-      string password_confirmation; cin >> password_confirmation;
+      char password_confirmation; cin >> password_confirmation;
       //while(password_confirmation != User.chel.user_password)
       {
         printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
@@ -84,7 +84,7 @@ int case4()
     case 4:
       printf("Для продолжения введите ваш пароль: ");
       {
-      string password_confirmation; cin >> password_confirmation;
+      char password_confirmation; cin >> password_confirmation;
       //while(password_confirmation != User.chel.user_password)
       {
         printf("Введенный пароль не соответствует вашему. Попробуйте еще раз.\n");
@@ -147,14 +147,14 @@ int new_user_registration()
 {
   using namespace std;
   printf("Самое время зарегистрироваться. Введите свой новый логин: ");
-  string new_user_login; cin >> new_user_login;
+  char new_user_login; cin >> new_user_login;
   // if new_user_login exists in DB
   // Try again
   cout << "Ваш новый логин: " << new_user_login << endl;
   printf("Самое время придумать пароль. Он должен содержать более 8ми символов: ");
-  string new_user_password; cin >> new_user_password;
+  char new_user_password; cin >> new_user_password;
   printf("Введите свой новый пароль еще раз: ");
-  string new_user_password_confirmation; cin >> new_user_password_confirmation;
+  char new_user_password_confirmation; cin >> new_user_password_confirmation;
   while (new_user_password != new_user_password_confirmation)
   {
     printf("Введенные пароли не сходятся. Попробуйте еще раз.\n");
@@ -168,10 +168,10 @@ int old_user_authentication()
 {
   using namespace std;
   printf("Введите свой логин: ");
-  string old_user_login; cin >> old_user_login;
+  char old_user_login; cin >> old_user_login;
   cout << "Ваш логин - " << old_user_login << endl;
   printf("Введите свой пароль: ");
-  string old_user_password; cin >> old_user_password;
+  char old_user_password; cin >> old_user_password;
   User chel {old_user_login, old_user_password};
   return 0;
 }
