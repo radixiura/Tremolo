@@ -9,9 +9,7 @@ functions.greeting()
 
 user_answer = input('Вы уже имеете аккаунт?: ')
 
-if user_answer == 'Да':
+if user_answer == "Да" or "да":
     functions.old_user_registration()
-elif user_answer == "Нет":
+elif user_answer == "Нет" or "нет":
     functions.new_user_registration()
-
-functions.main_menu()
