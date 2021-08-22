@@ -1,12 +1,52 @@
 import sys
 import requests
 import bs4
-from modules import message_sending
 from PyQt5.QtWidgets import (QWidget, QLabel, QLineEdit, QTextEdit, QGridLayout, QApplication)
 
 
 def greeting():
     print("Привет!")
+
+
+def old_user_registration():
+    old_user_login = input("Введите ваш логин: ")
+    # if old_user_login exist in DB:
+    #   pass
+    # else:
+    #   print('Данный логин не найден в базе данных. Попробуете ввести логин еще раз?: ')
+    old_user_password = input("Введите ваш пароль: ")
+    # if old_user_password exist in DB:
+    #   pass
+    # else:
+    #   print('Пароль введен неверно. Попробуете ввести пароль еще раз?: ')
+    old_user_password = password
+    main_menu()
+
+
+def new_user_registration():
+    new_user_login = input("Самое время зарегистрироваться. Введите свой новый логин: ")
+    # while new_user_login exists in BD
+    # print('Этот логин уже занят')
+    # print('Попробуйте ввести другой')
+    # new_user_login = input()
+    # if new_user_login not exists in BD:
+    # break
+    print(f"Ваш новый логин: {new_user_login}")
+    print("Самое время придумать пароль. Он должен содержать более 8ми символов.")
+    new_user_password = input("Введите ваш новый пароль: ")
+    while len(new_user_password) <= 8:
+        print('Пароль должен содержать более 8ми символов. Попробуйте заново.')
+        new_user_password = input()
+        if len(new_user_password) > 8:
+            break
+    new_user_password_confirmation = input("Подтвердите ваш пароль: ")
+    while new_user_password != new_user_password_confirmation:
+        print('Введенные пароли не совпадают. Попробуйте еще раз ввести пароль')
+        new_user_password_confirmation = input()
+        if new_user_password_confirmation == new_user_password:
+            break
+    new_user_password = password
+    main_menu()
 
 
 def main_menu():
@@ -35,54 +75,6 @@ def main_menu():
         print('Значит, ты выбрал смерть...')
 
 
-def old_user_registration():
-    old_user_login = input("Введите свой логин: ")
-    # if old_user_login exist in DB:
-    #   pass
-    # else:
-    #   print('Данный логин не найден в базе данных. Попробуете ввести логин еще раз?: ')
-    print('Ваш логин - ' + old_user_login)
-    old_user_password = input("Введите свой пароль: ")
-    # if old_user_password exist in DB:
-    #   pass
-    # else:
-    #   print('Пароль введен неверно. Попробуете ввести пароль еще раз?: ')
-    password = open('password.txt', 'w')
-    password.write(old_user_password)  # Добавить хеширование
-    password.close()
-
-
-def new_user_registration():
-    new_user_login = input("Самое время зарегистрироваться. Введите свой новый логин: ")
-    # while new_user_login exists in BD
-    # print('Этот логин уже занят')
-    # print('Попробуйте ввести другой')
-    # new_user_login = input()
-    # if new_user_login not exists in BD:
-    # break
-    print("Ваш новый логин - ", new_user_login)
-    print("Самое время придумать пароль. Он должен содержать более 8ми символов.")
-    new_user_password = input("Введите ваш новый пароль: ")
-    while len(new_user_password) <= 8:
-        print('Пароль должен содержать более 8ми символов.')
-        new_user_password = input()
-        if len(new_user_password) > 8:
-            break
-    number_of_characters = len(new_user_password)
-    print('Подтвердите ваш пароль')
-    new_user_password_confirmation = input()
-    while new_user_password != new_user_password_confirmation:
-        print('Введенные пароли не совпадают. Попробуйте еще раз ввести пароль')
-        new_user_password_confirmation = input()
-        if new_user_password_confirmation == new_user_password:
-            break
-    print("Количество символов в вашем новом пароле: ", number_of_characters)
-    print('Отлично, вы зарегистрированы.')
-    password = open('password.txt', 'w')
-    password.write(new_user_password)  # Добавить хеширование
-    password.close()
-
-
 def menu1():
     print("Общение это прекрасно.")
     login_for_new_message = input("Введите логин, на который нужно отправить сообщение: ")
@@ -104,28 +96,26 @@ def send_message():
 
             self.initUI()
 
-
         def initUI(self):
+            receiver = QLabel('Title')
+            theme = QLabel('Author')
+            message = QLabel('Review')
 
-            title = QLabel('Title')
-            author = QLabel('Author')
-            review = QLabel('Review')
-
-            titleEdit = QLineEdit()
-            authorEdit = QLineEdit()
-            reviewEdit = QTextEdit()
+            title_edit = QLineEdit()
+            author_edit = QLineEdit()
+            review_edit = QTextEdit()
 
             grid = QGridLayout()
             grid.setSpacing(10)
 
-            grid.addWidget(title, 1, 0)
-            grid.addWidget(titleEdit, 1, 1)
+            grid.addWidget(receiver, 1, 0)
+            grid.addWidget(title_edit, 1, 1)
 
-            grid.addWidget(author, 2, 0)
-            grid.addWidget(authorEdit, 2, 1)
+            grid.addWidget(theme, 2, 0)
+            grid.addWidget(author_edit, 2, 1)
 
-            grid.addWidget(review, 3, 0)
-            grid.addWidget(reviewEdit, 3, 1, 5, 1)
+            grid.addWidget(message, 3, 0)
+            grid.addWidget(review_edit, 3, 1, 5, 1)
 
             self.setLayout(grid)
 
@@ -133,9 +123,7 @@ def send_message():
             self.setWindowTitle('Review')
             self.show()
 
-
     if __name__ == '__main__':
-
         app = QApplication(sys.argv)
         ex = Example()
         sys.exit(app.exec_())
@@ -170,12 +158,14 @@ def menu4():
     user_choice4 = input("Выберите действие: ")
     if user_choice4 == "1":
         password_confirmation = input("Для продолжения введите ваш пароль: ")
-        check = open('password.txt', 'r')
-        line = check.readline()
-        if password_confirmation != line:
-            print("Жопа")
-        elif password_confirmation == check:
-            print("Апож")
+        global password
+        while password_confirmation != password:
+            print("Не слишком похоже на ваш пароль. Попробуйте заново.")
+            password_confirmation = input()
+            if password_confirmation == password:
+                login = input("Введите ваш новый логин:")
+                print(f"Ваш новый логин - {login} !")
+                break
     elif user_choice4 == "2":
         password_confirmation = input("Для продолжения введите ваш пароль: ")
     elif user_choice4 == "3":
@@ -184,7 +174,7 @@ def menu4():
         password_confirmation = input("Для продолжения введите ваш пароль: ")
         print("Ваш аккаунт удален. До свидания!")
         exit()
-    main_menu()
+        main_menu()
 
 
 def menu5():
