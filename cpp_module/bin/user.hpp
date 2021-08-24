@@ -1,7 +1,7 @@
 class User
 {
   public:
-    const std::string id;
-    std::string user_login;
-    std::string user_password;
+    const std::char id[];
+    std::char user_login[];
+    std::char user_password[];
 };
