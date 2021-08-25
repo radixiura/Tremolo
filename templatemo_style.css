@@ -1,0 +1,244 @@
+body {
+	overflow-x: hidden;
+	margin: 0px;
+	padding: 0px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 15px;
+	line-height: 1.7em; 
+	background-color: #e9e6e6;
+}
+
+a, a:link, a:visited { color: #3d8e7d; font-weight: normal; text-decoration: underline; font-size: 15px }
+
+a.more { 
+	display: inline-block; 
+	float: right; 
+	width: 72px; 
+	line-height: 23px; 
+	text-align: center; 
+	text-decoration: none; 
+	font-weight: bold; 
+	background: url(images/templatemo_more.png) no-repeat top center; 
+	color: #000; 
+	text-shadow: 1px 1px 1px #fff;
+}
+
+
+p { margin: 0 0 10px 0; padding: 0; }
+em { color: #3d8e7d; }
+
+h1, h2, h3, h4, h5, h6 { color: #000; font-weight: normal; }
+h1 { font-size: 34px; margin: 0 0 20px; padding: 5px 0 }
+h2 { font-size: 28px; margin: 0 0 15px; padding: 5px 0; }
+h3 { font-size: 24px; margin: 0 0 15px; padding: 0; }
+h4 { font-size: 18px; margin: 0 0 15px; padding: 0; }
+h5 { font-size: 16px; margin: 0 0 10px; padding: 0;  }
+h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
+
+.cleaner { clear: both }
+.h10 { height: 10px }
+.h20 { height: 20px }
+.h30 { height: 30px }
+.h40 { height: 40px }
+.h50 { height: 50px }
+.h60 { height: 60px }
+
+#templatemo_body_wrapper {
+	overflow: hidden;
+	width: 100%;
+	background: url(images/templatmeo_body.png) top center no-repeat
+}
+
+#templatemo_wrapper {
+	overflow: hidden;
+	width: 100%;
+	padding: 0 10px;
+	margin: 0 auto;
+	background: url(images/templatmeo_body.png) top no-repeat
+}
+
+#templatemo_header {
+	overflow: hidden;
+	float: center;
+	width: auto;
+	height: 95px;
+	padding-top: 0px;
+}
+#site_title { float: center; }
+#site_title h1 { margin: 0; padding: 0; }
+#site_title h1 a { display: block; width: auto; height: 95px; background: url(images/shapka.jpg) no-repeat center}
+ 
+/* Верхнее меню */
+
+#templatemo_menu {
+	float: center;
+	width: auto;
+	height: 53px;
+	background: url(images/templamtemo_menu.png)
+}
+
+/* Отступы верхнего меню */
+
+#templatemo_menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Блоки внутри меню */
+
+#templatemo_menu ul li a {
+	float: left;
+	width: 155px;
+	height: 33px;
+	padding: 7px 0 0 0;
+	font-size: 18px;
+	color: #67acc2;	
+	text-shadow: 1px 1px 1px #fff;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 700;
+	outline: none;
+	border: none;
+	letter-spacing: 1px;
+	background: url(images/templatmeo_menu_divider.png) right repeat-y;
+}
+
+#templatemo_menu ul li a:hover, #templatemo_menu ul .current {
+	color: #666;
+	text-shadow: 1px 1px 1px #fff
+}
+
+#templatemo_menu ul .last { background: none }
+
+#templatemo_main {
+	clear: both;
+	width: auto;
+}
+
+#templatemo_main p {
+	margin-bottom: 10px
+}
+
+.col_w900 { width: auto; margin-bottom: 25px; }
+
+/* Линия снизу от верхнего меню */
+
+.post_header { border-top: 3px solid #999; border-bottom: 1px solid #ccc; padding: 5px; margin-bottom: 20px }
+
+/* Место сверху от копирайта */
+
+.post_box { clear: none; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #ccc }
+
+
+/* Контейнер копирайта */
+
+#templatemo_footer_wrapper {
+	clear: both;
+	width: auto;
+	background: #a9a9a9;
+}
+
+/* Копирайт */
+
+#templatemo_footer {
+	clear: both;
+	width: auto;
+	padding: 10px 10px; 
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* Вертикальное меню */
+
+.menu_vertical {
+	position: absolute;
+	right: 1122px;
+	top: 100px;
+	width: 200px;
+	height: 400px;
+	overflow-y: auto;
+}
+	
+.menu_vertical a {
+    background-color: FFFFFF;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    border: 1px solid #333;
+}
+	
+.menu_vertical a:hover {
+    background-color: #ccc;
+}
+
+.menu_vertical a.active {
+    background-color: #67acc2;
+    color: white;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+	
+    /* Создание четырех равных столбцов, которые плавают рядом друг с другом */
+	
+.column {
+	float: left;
+    width: 24%;
+    padding: 10px;
+    height: 310px; 
+}
+    
+    /* Очистка места после колонок */
+	
+.row:after {
+	content: "";
+    display: table;
+    clear: both;
+}
+
+/* Ниспадающее меню */
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 17px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
