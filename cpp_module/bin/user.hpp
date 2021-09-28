@@ -1,7 +1,8 @@
+using namespace std;
 class User
 {
   public:
-    const std::char id[];
-    std::char user_login[];
-    std::char user_password[];
+    char id[];
+    char user_login[];
+    char user_password[];
 };
