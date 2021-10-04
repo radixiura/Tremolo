@@ -48,17 +48,42 @@ int main_menu()
       	main_menu();
       break;
     case 5:
-      case5();
-      main_menu();
-      break;
+  		printf("Что бы вы хотели узнать?\n");
+  		printf("Язык и технологии, используемые при создании Tremolo - 1\n");
+  		printf("Гарантии безопасности при работе с Tremolo - 2\n");
+ 	 	printf("Цели и задачи Tremolo - 3\n");
+  		printf("Назад - 0\n");
+  		printf("Введите 1, 2, 3 или 0: ");
+  		int user_choice5; cin >> user_choice5;
+  		switch(user_choice5)
+  		{
+    	case 1:
+      		printf("В данный момент есть два клиента Tremolo. Один полностью написан на C++, второй на Python3. Используемая СУДБ - PostgreSQL. Также, используется некоторая скриптовая поддержка Shell. Графический интерфейс программы построен на библиотеке Qt.\n");
+      		break;
+    	case 2:
+      		printf("Вы можете просто не ныть, если не верите в безопасность нашего чата.\n");
+      		break;
+    	case 3:
+      		printf("Специально для урегулирования вражды между компилируемыми и интерпретируемыми языками программирования программа для нашего чата написана на c ++ и python.\n");
+      		break;
+    	case 0:
+      		printf("НАЗАД\n");
+      		break;
+    	default:
+      		printf("Вы ввели что - то странное. Возврат к меню.");
+      		break;
+  		}
+      	main_menu();
     case 6:
-      case6();
-      main_menu();
-      break;
+     {
+     	//std::cout << "До свидания, " << User.chel.user_login << "!";
+     	exit(1);
+     }
     case 0:
-      case0();
-      main_menu();
-      break;
+	{
+  		printf("В настоящий момент я хикканю и у меня нет желания говорить.\n");
+  		main_menu();
+	}
     default:
       printf("Вы ввели что - то странное. Возврат к меню.");
       main_menu();
