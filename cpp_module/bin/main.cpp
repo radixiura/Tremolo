@@ -20,26 +20,21 @@ int main()
   using namespace std;
   setlocale(LC_ALL, "Russian");
   printf("Привет!\n");
-  while (true)
+  printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
+  int user_answer; cin >> user_answer;
+  switch(user_answer)
   {
-  	printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
-	int user_answer; cin >> user_answer;
-	if (cin.fail())
-	{
-		cin.clear();
-		cin.ignore(32767, '\n');
-	}
-	if (user_answer == '1')
-		old_user_authentication();
-	if (user_answer == '0')
-		new_user_registration();
-	else
-  		printf("Вы ввели что - то странное. Попробуйте еще раз: ");
-  		cin >> user_answer;
+  	case 0:
+  		new_user_registration();
+  		break;
+  	case 1:
+  		old_user_authentication();
+  		break;
   }
   main_menu();
   return 0;
 }
+
 
 
 // Доработки:
