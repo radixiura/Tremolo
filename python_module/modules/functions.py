@@ -3,28 +3,32 @@ import requests
 import bs4
 from PyQt5.QtWidgets import (QWidget, QLabel, QLineEdit, QTextEdit, QGridLayout, QApplication)
 
-
-def greeting():
-    print("Привет!")
-
-
 def old_user_registration():
     old_user_login = input("Введите ваш логин: ")
+    print(f"Ваш логин: {old_user_login}")
     # if old_user_login exist in DB:
     #   pass
     # else:
     #   print('Данный логин не найден в базе данных. Попробуете ввести логин еще раз?: ')
     old_user_password = input("Введите ваш пароль: ")
+    if len(old_user_password) > 8:
+        print(f"{old_user_login}, вы успешно вошли.")
     # if old_user_password exist in DB:
     #   pass
     # else:
     #   print('Пароль введен неверно. Попробуете ввести пароль еще раз?: ')
-    old_user_password = password
     main_menu()
 
 
 def new_user_registration():
-    new_user_login = input("Самое время зарегистрироваться. Введите свой новый логин: ")
+    print("Самое время придумать логин.")
+    print("Он должен содержать более 8ми символов.")
+    new_user_login = input("Введите ваш новый логин: ")
+    while len(new_user_login) < 8:
+        print('Логин должен содержать более 8ми символов. Попробуйте заново.')
+        new_user_login = input()
+        if len(new_user_login) > 8:
+            break
     # while new_user_login exists in BD
     # print('Этот логин уже занят')
     # print('Попробуйте ввести другой')
@@ -34,7 +38,7 @@ def new_user_registration():
     print(f"Ваш новый логин: {new_user_login}")
     print("Самое время придумать пароль. Он должен содержать более 8ми символов.")
     new_user_password = input("Введите ваш новый пароль: ")
-    while len(new_user_password) <= 8:
+    while len(new_user_password) < 8:
         print('Пароль должен содержать более 8ми символов. Попробуйте заново.')
         new_user_password = input()
         if len(new_user_password) > 8:
@@ -45,7 +49,6 @@ def new_user_registration():
         new_user_password_confirmation = input()
         if new_user_password_confirmation == new_user_password:
             break
-    new_user_password = password
     main_menu()
 
 
@@ -78,6 +81,7 @@ def main_menu():
 def menu1():
     print("Общение это прекрасно.")
     login_for_new_message = input("Введите логин, на который нужно отправить сообщение: ")
+    print(f"Логин для отправки сообщения: {login_for_new_message}")
     send_message()
     # if login_for_new_message exists in DB
     #   new_message = input("Введите текст вашего сообщения: ")
