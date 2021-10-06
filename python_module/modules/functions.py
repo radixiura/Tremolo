@@ -3,7 +3,8 @@ import requests
 import bs4
 from PyQt5.QtWidgets import (QWidget, QLabel, QLineEdit, QTextEdit, QGridLayout, QApplication)
 
-def old_user_registration():
+
+def old_user_authentication():
     old_user_login = input("Введите ваш логин: ")
     print(f"Ваш логин: {old_user_login}")
     # if old_user_login exist in DB:
@@ -17,7 +18,6 @@ def old_user_registration():
     #   pass
     # else:
     #   print('Пароль введен неверно. Попробуете ввести пароль еще раз?: ')
-    main_menu()
 
 
 def new_user_registration():
@@ -49,7 +49,6 @@ def new_user_registration():
         new_user_password_confirmation = input()
         if new_user_password_confirmation == new_user_password:
             break
-    main_menu()
 
 
 def main_menu():
