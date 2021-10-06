@@ -5,7 +5,7 @@
 using namespace std;
 
 
-// Entry functions
+//  Entry functions
 
 
 int new_user_registration()
@@ -38,7 +38,7 @@ int old_user_authentication()
 }
 
 
-// Menu functions
+//  Menu functions
 
 
 int main_menu()
