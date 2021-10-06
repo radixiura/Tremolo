@@ -4,6 +4,9 @@ import bs4
 from PyQt5.QtWidgets import (QWidget, QLabel, QLineEdit, QTextEdit, QGridLayout, QApplication)
 
 
+#  Entry functions
+
+
 def old_user_authentication():
     old_user_login = input("Введите ваш логин: ")
     print(f"Ваш логин: {old_user_login}")
@@ -50,6 +53,8 @@ def new_user_registration():
         if new_user_password_confirmation == new_user_password:
             break
 
+#  Menu functions
+
 
 def main_menu():
     print("Меню:")
@@ -78,7 +83,6 @@ def main_menu():
 
 
 def menu1():
-    print("Общение это прекрасно.")
     login_for_new_message = input("Введите логин, на который нужно отправить сообщение: ")
     print(f"Логин для отправки сообщения: {login_for_new_message}")
     send_message()
@@ -88,7 +92,6 @@ def menu1():
     #   print("Введенного логина не существует в нашей базе данных!)
     # else:
     #   print("Произошла ошибка")
-    main_menu()
 
 
 def send_message():
