@@ -10,14 +10,14 @@ using namespace std;
 
 int new_user_registration()
 {
-  printf("Самое время зарегистрироваться. Введите свой новый логин: ");
-  char new_user_login; cin >> new_user_login;
-  cout << "Ваш новый логин: " << new_user_login << endl;
-  printf("Самое время придумать пароль. Он должен содержать более 8ми символов: ");
-  char new_user_password; cin >> new_user_password;
-  printf("Введите свой новый пароль еще раз: ");
-  char new_user_password_confirmation; cin >> new_user_password_confirmation;
-  	while (new_user_password != new_user_password_confirmation)
+	printf("Самое время зарегистрироваться. Введите свой новый логин: ");
+	char new_user_login; cin >> new_user_login;
+	cout << "Ваш новый логин: " << new_user_login << endl;
+	printf("Самое время придумать пароль. Он должен содержать более 8ми символов: ");
+	char new_user_password; cin >> new_user_password;
+	printf("Введите свой новый пароль еще раз: ");
+	char new_user_password_confirmation; cin >> new_user_password_confirmation;
+	while (new_user_password != new_user_password_confirmation)
   	{
     	printf("Введенные пароли не сходятся. Попробуйте еще раз.\n");
     	cout << "Введите пароль: "; cin >> new_user_password_confirmation;
@@ -28,13 +28,13 @@ int new_user_registration()
 
 int old_user_authentication()
 {
-  using namespace std;
-  printf("Введите свой логин: ");
-  char old_user_login; cin >> old_user_login;
-  cout << "Ваш логин: " << old_user_login << endl;
-  printf("Введите свой пароль: ");
-  char old_user_password; cin >> old_user_password;
-  return 0;
+	using namespace std;
+	printf("Введите свой логин: ");
+	char old_user_login; cin >> old_user_login;
+	cout << "Ваш логин: " << old_user_login << endl;
+	printf("Введите свой пароль: ");
+	char old_user_password; cin >> old_user_password;
+	return 0;
 }
 
 
@@ -68,7 +68,7 @@ int main_menu_modules_1()
 
 int main_menu_modules_2()
 {
-	printf("Курс BTC:")
+	printf("Курс BTC:");
 	//api
 	return 0;
 }
@@ -76,7 +76,7 @@ int main_menu_modules_2()
 
 int main_menu_modules_3()
 {
-	printf("Текущий IP - адрес:")
+	printf("Текущий IP - адрес:");
 	//api
 	return 0;
 }
@@ -92,17 +92,18 @@ int main_menu_modules_4()
 	printf("Назад - 0\n");
 	printf("Введите 1, 2, 3, 4 или 0: ");
 	int user_choice4; cin >> user_choice4;
+	char password_confirmation;
 	switch(user_choice4)
 	{
 		case 1:
 			printf("Для продолжения введите ваш пароль: ");
-			char password_confirmation; cin >> password_confirmation;
+			cin >> password_confirmation;
 			//
 			printf("Логин успешно изменен!");
 			break;
 		case 2:
 			printf("Для продолжения введите ваш пароль: ");
-			char password_confirmation; cin >> password_confirmation;
+			cin >> password_confirmation;
 			//
 			printf("Пароль успешно изменен!");
 			break;
@@ -111,7 +112,7 @@ int main_menu_modules_4()
 			break;
 		case 4:
 			printf("Для продолжения введите ваш пароль: ");
-			char password_confirmation; cin >> password_confirmation;
+			cin >> password_confirmation;
 			//
 			printf("Ваш аккаунт удален. До свидания!");
       		exit(1);
@@ -145,6 +146,8 @@ int main_menu_modules_5()
       printf("НАЗАД\n");
       break;
 	}
+	return 0;
+}
 
 
 int main_menu_modules6()
