@@ -7,10 +7,7 @@
 #include <ctime>
 #include <stdlib.h>
 #include "constants.h"
-#include "main_menu.h"
-#include "menu_functions.h"
-#include "new_user_registration.h"
-#include "old_user_authentication.h"
+#include "functions.h"
 
 //#include "user.hpp"
 //#include "already_existing_user.hpp"
@@ -32,6 +29,7 @@ int main()
   		break;
   }
   main_menu();
+  
   return 0;
 }
 
