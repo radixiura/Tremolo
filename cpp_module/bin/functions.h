@@ -91,9 +91,74 @@ int main_menu_modules_4()
 	printf("Удалить аккаунт - 4\n");
 	printf("Назад - 0\n");
 	printf("Введите 1, 2, 3, 4 или 0: ");
-	int user_choice4; cin >> user_choice4
+	int user_choice4; cin >> user_choice4;
+	switch(user_choice4)
+	{
+		case 1:
+			printf("Для продолжения введите ваш пароль: ");
+			char password_confirmation; cin >> password_confirmation;
+			//
+			printf("Логин успешно изменен!");
+			break;
+		case 2:
+			printf("Для продолжения введите ваш пароль: ");
+			char password_confirmation; cin >> password_confirmation;
+			//
+			printf("Пароль успешно изменен!");
+			break;
+		case 3:
+			printf("Вставьте ссылку на ваш новый аватар");
+			break;
+		case 4:
+			printf("Для продолжения введите ваш пароль: ");
+			char password_confirmation; cin >> password_confirmation;
+			//
+			printf("Ваш аккаунт удален. До свидания!");
+      		exit(1);
+      		break;
+	}
+	return 0;
 }
 
+
+int main_menu_modules_5()
+{ 
+	printf("Что бы вы хотели узнать?\n");
+	printf("Язык и технологии, используемые при создании Tremolo - 1\n");
+	printf("Гарантии безопасности при работе с Tremolo - 2\n");
+	printf("Цели и задачи Tremolo - 3\n");
+	printf("Назад - 0\n");
+	printf("Введите 1, 2, 3 или 0: ");
+	int user_choice5; cin >> user_choice5;
+	switch(user_choice5)
+	{
+	case 1:
+      printf("В данный момент есть два клиента Tremolo. Один полностью написан на C++, второй на Python3. Используемая СУДБ - PostgreSQL. Также, используется некоторая скриптовая поддержка Shell. Графический интерфейс программы построен на библиотеке Qt.\n");
+      break;
+	case 2:
+      printf("Вы можете просто не ныть, если не верите в безопасность нашего чата.\n");
+      break;
+	case 3:
+      printf("Специально для урегулирования вражды между компилируемыми и интерпретируемыми языками программирования программа для нашего чата написана на c ++ и python.\n");
+      break;
+	case 0:
+      printf("НАЗАД\n");
+      break;
+	}
+
+
+int main_menu_modules6()
+{
+	//std::cout << "До свидания, " << User.chel.user_login << "!";
+	exit(1);
+}
+
+
+int main_menu_modules0()
+{
+	printf("В настоящий момент я хикканю и у меня нет желания говорить.\n");
+	return 0;
+}
 
 
 #endif
