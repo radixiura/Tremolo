@@ -204,5 +204,13 @@ int old_user_authentication()
 	return 0;
 }
 
+int get_user_answer()
+{
+	using namespace std;
+	printf("Привет!\n");
+	printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
+	int user_answer; cin >> user_answer;
+	return user_answer;
+}
 
 #endif
