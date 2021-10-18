@@ -92,6 +92,7 @@ def menu1():
     #   print("Введенного логина не существует в нашей базе данных!)
     # else:
     #   print("Произошла ошибка")
+    # print(f"Введите сообщение для {login_for_message} : ")
 
 
 def send_message():
