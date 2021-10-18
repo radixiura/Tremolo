@@ -1,11 +1,12 @@
-#include <stdio.h>
-#include <iostream>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <climits>
 #include <ctime>
+#include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string>
 #include "functions.h"
 
 //#include "user.hpp"
