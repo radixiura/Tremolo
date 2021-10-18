@@ -11,7 +11,11 @@ using namespace std;
 int main_menu_modules_1()
 {
 	printf("Введите логин, на который нужно отправить сообщение: ");
-	char login_to_message; cin >> login_to_message;
+	string login_to_message; getline(cin, login_to_message);
+	// Проверка существования логина
+	cout << "Введите сообщения для " << login_to_message << ":" << endl;
+	string message; getline(cin, message);
+	cout << message;
 	// Отправка сообщения
 	return 0;
 }
@@ -43,7 +47,7 @@ int main_menu_modules_4()
 	printf("Назад - 0\n");
 	printf("Введите 1, 2, 3, 4 или 0: ");
 	int user_choice4; cin >> user_choice4;
-	char password_confirmation;
+	string password_confirmation;
 	switch(user_choice4)
 	{
 		case 1:
@@ -117,7 +121,6 @@ int main_menu_modules_0()
 
 int main_menu()
 {
-	using namespace std;
   	printf("Меню:\n");
   	printf("Отправить сообщение - 1\n");
   	printf("Узнать курс BTC - 2\n");
@@ -160,12 +163,12 @@ int main_menu()
 int new_user_registration()
 {
 	printf("Самое время зарегистрироваться. Введите свой новый логин: ");
-	char new_user_login; cin >> new_user_login;
+	string new_user_login; getline(cin, new_user_login);
 	cout << "Ваш новый логин: " << new_user_login << endl;
 	printf("Самое время придумать пароль. Он должен содержать более 8ми символов: ");
-	char new_user_password; cin >> new_user_password;
+	string new_user_password; getline(cin, new_user_password);
 	printf("Введите свой новый пароль еще раз: ");
-	char new_user_password_confirmation; cin >> new_user_password_confirmation;
+	string new_user_password_confirmation; getline(cin, new_user_password_confirmation);
 	while (new_user_password != new_user_password_confirmation)
   	{
     	printf("Введенные пароли не сходятся. Попробуйте еще раз.\n");
@@ -195,7 +198,6 @@ char get_old_password()
 
 int old_user_authentication()
 {
-	using namespace std;
 	printf("Введите свой логин: ");
 	char old_user_login; cin >> old_user_login;
 	cout << "Ваш логин: " << old_user_login << endl;
@@ -206,10 +208,9 @@ int old_user_authentication()
 
 int get_user_answer()
 {
-	using namespace std;
 	printf("Привет!\n");
 	printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
-	int user_answer; cin >> user_answer;
+	int user_answer; cin >> user_answer; cin.ignore(32767, '\n');
 	return user_answer;
 }
 
