@@ -105,7 +105,7 @@ int main_menu_modules_5()
 }
 
 
-int main_menu_modules_6()
+int main_menu_modules_6()	// Ready
 {
 	//std::cout << "До свидания, " << User.chel.user_login << "!";
 	exit(1);
@@ -199,10 +199,10 @@ char get_old_password()
 int old_user_authentication()
 {
 	printf("Введите свой логин: ");
-	char old_user_login; cin >> old_user_login;
+	string old_user_login; getline(cin, old_user_login);
 	cout << "Ваш логин: " << old_user_login << endl;
 	printf("Введите свой пароль: ");
-	char old_user_password; cin >> old_user_password;
+	string old_user_password; getline(cin, old_user_password);
 	return 0;
 }
 
