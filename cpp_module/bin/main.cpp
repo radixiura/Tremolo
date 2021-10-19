@@ -29,7 +29,7 @@ int main()
   		main_menu();
   		break;
   	default:
-  		printf("dichka");
+  		printf("Ошибка. Вы ввели что - то странное.");
   		break;
   }
   main_menu();
