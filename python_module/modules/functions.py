@@ -6,22 +6,6 @@ import bs4
 #  Entry functions
 
 
-def old_user_authentication():
-    old_user_login = input("Введите ваш логин: ")
-    print(f"Ваш логин: {old_user_login}")
-    # if old_user_login exist in DB:
-    #   pass
-    # else:
-    #   print('Данный логин не найден в базе данных. Попробуете ввести логин еще раз?: ')
-    old_user_password = input("Введите ваш пароль: ")
-    if len(old_user_password) > 8:
-        print(f"{old_user_login}, вы успешно вошли.")
-    # if old_user_password exist in DB:
-    #   pass
-    # else:
-    #   print('Пароль введен неверно. Попробуете ввести пароль еще раз?: ')
-
-
 def new_user_registration():
     print("Самое время придумать логин.")
     print("Он должен содержать более 8ми символов.")
@@ -51,6 +35,34 @@ def new_user_registration():
         new_user_password_confirmation = input()
         if new_user_password_confirmation == new_user_password:
             break
+    return new_user_login
+
+
+def get_old_login():
+    old_login = input("Введите свой логин: ")
+    return old_login
+
+
+def get_old_password():
+    old_password = input("Введите свой пароль: ")
+    return old_password
+
+
+def old_user_authentication():
+    old_user_login = input("Введите ваш логин: ")
+    print(f"Ваш логин: {old_user_login}")
+    # if old_user_login exist in DB:
+    #   pass
+    # else:
+    #   print('Данный логин не найден в базе данных. Попробуете ввести логин еще раз?: ')
+    old_user_password = input("Введите ваш пароль: ")
+    if len(old_user_password) > 8:
+        print(f"{old_user_login}, вы успешно вошли.")
+    # if old_user_password exist in DB:
+    #   pass
+    # else:
+    #   print('Пароль введен неверно. Попробуете ввести пароль еще раз?: ')
+
 
 #  Menu functions
 
@@ -167,4 +179,9 @@ def main_menu_modules6():
 
 
 def main_menu_modules0():
-    print("В настоящий момент я хикканю и у меня нет желания говорить.")
+    login1 = old_user_authentication()
+    login2 = new_user_registration()
+    if login1 > login2:
+        print("Обсада")
+    else:
+        print("Всада")
