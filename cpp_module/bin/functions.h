@@ -1,7 +1,6 @@
 import sys
 import requests
 import bs4
-from PyQt5.QtWidgets import (QWidget, QLabel, QLineEdit, QTextEdit, QGridLayout, QApplication)
 
 
 #  Entry functions
