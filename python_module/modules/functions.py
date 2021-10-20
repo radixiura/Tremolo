@@ -66,22 +66,22 @@ def main_menu():
     print("Связаться с разработчиком - 0")
     user_choice = input("Выберите действие: ")
     if user_choice == "1":
-        menu1()
+        main_menu_modules_1()
     elif user_choice == "2":
-        menu2()
+        main_menu_modules2()
     elif user_choice == "3":
-        menu3()
+        main_menu_modules3()
     elif user_choice == "4":
-        menu4()
+        main_menu_modules4()
     elif user_choice == "5":
-        menu5()
+        main_menu_modules5()
     elif user_choice == "6":
-        menu6()
+        main_menu_modules6()
     elif user_choice == "0":
-        print('Значит, ты выбрал смерть...')
+        main_menu_modules0()
 
 
-def menu1():
+def main_menu_modules_1():
     login_for_new_message = input("Введите логин, на который нужно отправить сообщение: ")
     message = input(f"Введите сообщение для {login_for_new_message}: ")
     print(message)
@@ -94,7 +94,7 @@ def menu1():
     # print(f"Введите сообщение для {login_for_message} : ")
 
 
-def menu2():
+def main_menu_modules2():
     response = requests.get('https://apirone.com/api/v2/ticker?currency=btc')
     if response:
         print('Отчет по курсу BTC к валютам готов.')
@@ -104,7 +104,7 @@ def menu2():
     main_menu()
 
 
-def menu3():
+def main_menu_modules3():
     print("Ваш текущий ip-адрес")
     pepsi = requests.get('https://2ip.ua/ru/')
     sprite = bs4.BeautifulSoup(pepsi.text, "html.parser")
@@ -113,7 +113,7 @@ def menu3():
     main_menu()
 
 
-def menu4():
+def main_menu_modules4():
     print("Что бы вы хотели настроить?")
     print("Изменить логин - 1")
     print("Изменить пароль - 2")
@@ -142,7 +142,7 @@ def menu4():
         main_menu()
 
 
-def menu5():
+def main_menu_modules5():
     print("Что бы вы хотели узнать?")
     print('Язык и технологии, используемые при создании Tremolo - 1')
     print('Гарантии безопасности при работе с Tremolo - 2')
@@ -161,6 +161,10 @@ def menu5():
     main_menu()
 
 
-def menu6():
-    print('До свидания!')
+def main_menu_modules6():
+    print("До свидания")
     exit()
+
+
+def main_menu_modules0():
+    print("В настоящий момент я хикканю и у меня нет желания говорить.")
