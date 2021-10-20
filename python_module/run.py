@@ -16,10 +16,10 @@ while checking:
     user_answer = int(input('Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: '))
 
     if user_answer == 1:
-        functions.old_user_authentication()
+        functions.new_user_registration()
         functions.main_menu()
     elif user_answer == 0:
-        functions.new_user_registration()
+        functions.old_user_authentication()
         functions.main_menu()
     else:
         print("Вы ввели что - то странное!")
