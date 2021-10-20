@@ -1,7 +1,6 @@
 import sys
 import requests
 import bs4
-from PyQt5.QtWidgets import (QWidget, QLabel, QLineEdit, QTextEdit, QGridLayout, QApplication)
 
 
 #  Entry functions
@@ -84,8 +83,8 @@ def main_menu():
 
 def menu1():
     login_for_new_message = input("Введите логин, на который нужно отправить сообщение: ")
-    print(f"Логин для отправки сообщения: {login_for_new_message}")
-    send_message()
+    message = input(f"Введите сообщение для {login_for_new_message}: ")
+    print(message)
     # if login_for_new_message exists in DB
     #   new_message = input("Введите текст вашего сообщения: ")
     # elif login_for_new_message not exists in DB
@@ -93,47 +92,6 @@ def menu1():
     # else:
     #   print("Произошла ошибка")
     # print(f"Введите сообщение для {login_for_message} : ")
-
-
-def send_message():
-    class Example(QWidget):
-
-        def __init__(self):
-            super().__init__()
-
-            self.initUI()
-
-        def initUI(self):
-            receiver = QLabel('Title')
-            theme = QLabel('Author')
-            message = QLabel('Review')
-
-            title_edit = QLineEdit()
-            author_edit = QLineEdit()
-            review_edit = QTextEdit()
-
-            grid = QGridLayout()
-            grid.setSpacing(10)
-
-            grid.addWidget(receiver, 1, 0)
-            grid.addWidget(title_edit, 1, 1)
-
-            grid.addWidget(theme, 2, 0)
-            grid.addWidget(author_edit, 2, 1)
-
-            grid.addWidget(message, 3, 0)
-            grid.addWidget(review_edit, 3, 1, 5, 1)
-
-            self.setLayout(grid)
-
-            self.setGeometry(300, 300, 350, 300)
-            self.setWindowTitle('Review')
-            self.show()
-
-    if __name__ == '__main__':
-        app = QApplication(sys.argv)
-        ex = Example()
-        sys.exit(app.exec_())
 
 
 def menu2():
