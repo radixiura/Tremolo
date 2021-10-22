@@ -178,33 +178,16 @@ int new_user_registration()
 }
 
 
-char get_old_login()
-{
-	printf("Введите свой логин: ");
-	char login;
-	cin >> login;
-	return login;
-}
-
-
-char get_old_password()
-{
-	printf("Введите свой пароль: ");
-	char password;
-	cin >> password;
-	return password;
-}
-
-
 int user_authentication()
 {
 	printf("Введите свой логин: ");
-	string old_user_login; getline(cin, old_user_login);
-	cout << "Ваш логин: " << old_user_login << endl;
+	string user_login; getline(cin, user_login);
+	cout << "Ваш логин: " << user_login << endl;
 	printf("Введите свой пароль: ");
-	string old_user_password; getline(cin, old_user_password);
+	string user_password; getline(cin, user_password);
 	return 0;
 }
+
 
 int get_user_answer()
 {
@@ -213,5 +196,6 @@ int get_user_answer()
 	int user_answer; cin >> user_answer; cin.ignore(32767, '\n');
 	return user_answer;
 }
+
 
 #endif
