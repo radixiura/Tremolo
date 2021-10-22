@@ -22,7 +22,7 @@ def main_menu_modules_1():
 def main_menu_modules2():
     response = requests.get('https://apirone.com/api/v2/ticker?currency=btc')
     if response:
-        print('Отчет по курсу BTC к валютам готов.')
+        print('Курс BTC:')
     else:
         print('Произошла ошибка.')
     print(response.text)
@@ -30,7 +30,7 @@ def main_menu_modules2():
 
 
 def main_menu_modules3():
-    print("Ваш текущий ip-адрес")
+    print("Текущий IP - адрес: ")
     pepsi = requests.get('https://2ip.ua/ru/')
     sprite = bs4.BeautifulSoup(pepsi.text, "html.parser")
     ip_address_info = sprite.select(" .ipblockgradient .ip")[0].getText()
@@ -45,7 +45,7 @@ def main_menu_modules4():
     print("Изменить аватар - 3")
     print("Удалить аккаунт - 4")
     print("Назад - 0")
-    user_choice4 = input("Выберите действие: ")
+    user_choice4 = input("Введите 1, 2, 3, 4 или 0: ")
     if user_choice4 == "1":
         password_confirmation = input("Для продолжения введите ваш пароль: ")
         global password
@@ -54,12 +54,12 @@ def main_menu_modules4():
             password_confirmation = input()
             if password_confirmation == password:
                 login = input("Введите ваш новый логин:")
-                print(f"Ваш новый логин - {login} !")
+                print("Логин успешно изменен!")
                 break
     elif user_choice4 == "2":
         password_confirmation = input("Для продолжения введите ваш пароль: ")
     elif user_choice4 == "3":
-        print("Вставьте ссылку на ваш новый аватар: ")
+        print("Вставьте ссылку на ваш новый аватар")
     elif user_choice4 == "4":
         password_confirmation = input("Для продолжения введите ваш пароль: ")
         print("Ваш аккаунт удален. До свидания!")
@@ -73,13 +73,14 @@ def main_menu_modules5():
     print('Гарантии безопасности при работе с Tremolo - 2')
     print('Цели и задачи Tremolo - 3')
     print('Назад - 0')
-    user_choice5 = input("Выберите действие: ")
+    user_choice5 = input("Введите 1, 2, 3 или 0: ")
     if user_choice5 == "1":
-        print("В данный момент есть два клиента Tremolo. Один полностью написан на C++, второй на Python3.")
+        print("В данный момент есть два клиента Tremolo. Один полностью написан на C++, второй на Python3. Используемая СУДБ - PostgreSQL. Также, используется некоторая скриптовая поддержка Shell. Графический интерфейс программы построен на библиотеке Qt.")
     elif user_choice5 == "2":
-        print("Вы можете просто не ныть, если не верите в безопасность нашего чата.")
+        print("Вы можете просто связаться с разработчиком, если не верите в безопасность нашего чата.")
     elif user_choice5 == "3":
-        print("Основной задачей Tremolo является скорейший гешефт.")
+        print("Специально для урегулирования вражды между компилируемыми и интерпретируемыми языками программирования программа для нашего чата написана на c ++ и python.\n")
+    elif user_choice5 == "3":
         main_menu()
     elif user_choice5 == "0":
         print("НАЗАД")
@@ -96,9 +97,8 @@ def main_menu_modules0():
 
 
 def new_user_registration():
-    print("Самое время придумать логин.")
-    print("Он должен содержать более 8ми символов.")
-    new_user_login = input("Введите ваш новый логин: ")
+    
+    new_user_login = input("Самое время зарегистрироваться. Введите свой новый логин:  ")
     while len(new_user_login) < 8:
         print('Логин должен содержать более 8ми символов. Попробуйте заново.')
         new_user_login = input()
@@ -111,16 +111,16 @@ def new_user_registration():
     # if new_user_login not exists in BD:
     # break
     print(f"Ваш новый логин: {new_user_login}")
-    print("Самое время придумать пароль. Он должен содержать более 8ми символов.")
+    print("Самое время придумать пароль. Он должен содержать более 8ми символов: ")
     new_user_password = input("Введите ваш новый пароль: ")
     while len(new_user_password) < 8:
         print('Пароль должен содержать более 8ми символов. Попробуйте заново.')
         new_user_password = input()
         if len(new_user_password) > 8:
             break
-    new_user_password_confirmation = input("Подтвердите ваш пароль: ")
+    new_user_password_confirmation = input("Введите свой новый пароль еще раз: ")
     while new_user_password != new_user_password_confirmation:
-        print('Введенные пароли не совпадают. Попробуйте еще раз ввести пароль')
+        print('Введенные пароли не сходятся. Попробуйте еще раз.\n')
         new_user_password_confirmation = input()
         if new_user_password_confirmation == new_user_password:
             break
@@ -165,7 +165,7 @@ def main_menu():
     print("Узнать больше о программе - 5")  # ready
     print("Завершить работу - 6")  # ready
     print("Связаться с разработчиком - 0")
-    user_choice = input("Выберите действие: ")
+    user_choice = input("Введите 1, 2, 3, 4, 5, 6 или 0: ")
     if user_choice == "1":
         main_menu_modules_1()
     elif user_choice == "2":
