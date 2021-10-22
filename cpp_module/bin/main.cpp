@@ -8,6 +8,9 @@
 #include <stdlib.h>
 #include <string>
 #include "functions.h"
+#include "new_user_registration.h"
+#include "user_authentication.h"
+#include "main_menu.h"
 
 //#include "user.hpp"
 //#include "already_existing_user.hpp"
@@ -17,7 +20,7 @@ int main()
 {
   using namespace std;
   setlocale(LC_ALL, "Russian");
-  int user_answer = get_user_answer();
+  int user_answer = greetings();
   switch(user_answer)
   {
   	case 0:
