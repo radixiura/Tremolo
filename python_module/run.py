@@ -1,24 +1,23 @@
 # -*- coding: utf-8 -*-
 
-
-from modules import functions
-
+# Connecting a file with functions
+from modules import functions, main_menu, new_user_registration, user_authentication
 
 # from modules import postgresql_connection
 # postgresql_connection.connect_postgresql()
 
 
-print("Привет!")
+functions.greetings()
+
+
 user_answer = input("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ")
-
-
 checking = True
 while checking:
     if user_answer == "0":
-        functions.new_user_registration()
-        functions.main_menu()
+        new_user_registration.new_user_registration()
+        main_menu.main_menu_buttons()
     elif user_answer == "1":
-        functions.old_user_authentication()
-        functions.main_menu()
+        user_authentication.user_authentication()
+        main_menu.main_menu_buttons()
     else:
         print("Ошибка. Вы ввели что - то странное.")
