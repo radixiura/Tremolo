@@ -50,9 +50,7 @@ int main_menu_modules_4()
 	string password_confirmation;
 	switch(user_choice4)
 	{
-		case 1:
-			printf("Для продолжения введите ваш пароль: ");
-			cin >> password_confirmation;
+		case 1: 
 			//
 			printf("Логин успешно изменен!");
 			break;
