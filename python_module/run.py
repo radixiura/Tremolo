@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
 
-# Connecting a file with functions
+
 from modules import functions
+
 
 # from modules import postgresql_connection
 # postgresql_connection.connect_postgresql()
+
+
 print("Привет!")
 user_answer = input("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ")
+
+
 checking = True
 while checking:
     if user_answer == "0":
