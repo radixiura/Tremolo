@@ -196,7 +196,7 @@ char get_old_password()
 }
 
 
-int old_user_authentication()
+int user_authentication()
 {
 	printf("Введите свой логин: ");
 	string old_user_login; getline(cin, old_user_login);
