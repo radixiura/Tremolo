@@ -22,10 +22,11 @@ int main()
   {
   	case 0:
   		new_user_registration();
+  		user_authentication();
   		main_menu();
   		break;
   	case 1:
-  		old_user_authentication();
+  		user_authentication();
   		main_menu();
   		break;
   	default:
@@ -33,15 +34,5 @@ int main()
   		break;
   }
   main_menu();
-  
   return 0;
 }
-
-
-
-// Доработки:
-// 1. При введении не цифры в строке 195, происходит кринж
-// 2. Настроить проверку правильности пароля в case4
-// 3. Подключить python-модули для case2 и case3
-// 4. Сделать графический интерфейс
-// 5. 
