@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
 # Connecting a file with functions
-from modules import functions, main_menu, new_user_registration, user_authentication
+from functions import functions
+from modules import new_user_registration, user_authentication
+from main_menu_functions import main_menu_buttons_functions
+from main_menu_functions import main_menu
+
 
 # from modules import postgresql_connection
 # postgresql_connection.connect_postgresql()
