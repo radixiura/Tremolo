@@ -1,5 +1,4 @@
 def new_user_registration():
-    
     new_user_login = input("Самое время зарегистрироваться. Введите свой новый логин:  ")
     while len(new_user_login) < 8:
         print('Логин должен содержать более 8ми символов. Попробуйте заново.')
@@ -26,5 +25,4 @@ def new_user_registration():
         new_user_password_confirmation = input()
         if new_user_password_confirmation == new_user_password:
             break
-    return new_user_login
     
