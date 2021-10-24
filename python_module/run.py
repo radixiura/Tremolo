@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Connecting a file with functions
-from functions import functions
-from modules import new_user_registration, user_authentication
-from main_menu_functions import main_menu_buttons_functions
+from functions import greetings, new_user_registration, user_authentication
 from main_menu_functions import main_menu
 
 
@@ -11,7 +9,7 @@ from main_menu_functions import main_menu
 # postgresql_connection.connect_postgresql()
 
 
-functions.greetings()
+greetings.hello()
 
 
 user_answer = input("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ")
