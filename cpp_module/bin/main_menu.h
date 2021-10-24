@@ -5,9 +5,6 @@
 using namespace std;
 
 
-
-
-
 int main_menu_modules_1()
 {
 	printf("Введите логин, на который нужно отправить сообщение: ");
@@ -70,6 +67,8 @@ int main_menu_modules_4()
 			printf("Ваш аккаунт удален. До свидания!");
       		exit(1);
       		break;
+      	default:
+      		printf("Ошибка. Вы ввели что - то странное.\n");
 	}
 	return 0;
 }
@@ -118,7 +117,7 @@ int main_menu_modules_0()
 
 
 
-int main_menu()
+int main_menu_buttons()
 {
   	printf("Меню:\n");
   	printf("Отправить сообщение - 1\n");
@@ -153,8 +152,10 @@ int main_menu()
   		case 0:
   			main_menu_modules_0();
   			break;
+  		default:
+  			printf("Ошибка. Вы ввели что - то странное.\n");
   	}
-  	main_menu();
+  	main_menu_buttons();
   	return 0;
 }
 
