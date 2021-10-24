@@ -26,16 +26,16 @@ int main()
   	case 0:
   		new_user_registration();
   		user_authentication();
-  		main_menu();
+  		main_menu_buttons();
   		break;
   	case 1:
   		user_authentication();
-  		main_menu();
+  		main_menu_buttons();
   		break;
   	default:
-  		printf("Ошибка. Вы ввели что - то странное.");
+  		printf("Ошибка. Вы ввели что - то странное.\n");
   		break;
   }
-  main_menu();
+  main_menu_buttons();
   return 0;
 }
