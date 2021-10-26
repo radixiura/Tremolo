@@ -32,13 +32,13 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 [(Back to top)](#table-of-contents)
 
 
-  For C, you will need to open Terminal and type folowwing commands:  
+  For C, you will need to open Terminal and type following commands:  
 1)git clone https://github.com/radixiura/Tremolo  
 2)cd Tremolo/cpp_module/bin  
 3)g++ main.cpp  
 4)./a.out   
 
-  For Python, use:  
+  For Python usares, type:  
 1)cd Tremolo/python_module  
 2)python3 run.py
 
