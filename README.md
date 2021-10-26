@@ -22,8 +22,8 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 
 
 
-- [Project Title](#project-title)
-- [Demo-Preview](#demo-preview)
+- [Project Title](#tremolo)
+- [Screenshots](#screenshots)
 - [Table of contents](#table-of-contents)
 - [Installation](#installation)
 
