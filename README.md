@@ -38,7 +38,7 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 3)g++ main.cpp  
 4)./a.out   
 
-  For Python usares, type:  
+  For Python useres, type:  
 1)cd Tremolo/python_module  
 2)python3 run.py
 
