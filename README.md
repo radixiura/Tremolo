@@ -37,7 +37,7 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 ```bash
 
 git clone https://github.com/radixiura/Tremolo  
-Tremolo/cpp_module/bin  
+cd Tremolo/cpp_module/bin  
 g++ main.cpp  
 ./a.out 
 ```
