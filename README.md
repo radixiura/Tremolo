@@ -11,12 +11,12 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 
 ![](https://i.imgur.com/Mq1I50c.jpg)
 ![](https://i.imgur.com/e4gvLvD.jpg)
-TDB
 
 
 
 
-![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif)
+
+
 # Table of contents
 
 
@@ -49,6 +49,7 @@ For Python. use
 
 # Usage
 [(Back to top)](#table-of-contents)
+![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif)
 TBD
 
 Leave a star in GitHub, give a clap in Medium and share if you found this helpful.
