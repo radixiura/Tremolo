@@ -10,7 +10,6 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 # Screenshots
 
 ![](https://i.imgur.com/Mq1I50c.jpg)
-![](https://i.imgur.com/e4gvLvD.jpg)
 
 
 
