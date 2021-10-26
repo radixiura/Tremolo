@@ -1,6 +1,6 @@
 ![Banner](https://i.imgur.com/glErIFF.png)
 # Tremolo
-The main task of our project Tremolo is to create a safe, fast and convenient chat for communication over local and global networks, using modern technologies suc as C++ and Python.
+The main task of our project Tremolo is to create a safe, fast and convenient chat for communication over local and global networks, using modern technologies such as C++ and Python.
 
 
 
@@ -38,7 +38,7 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 3)g++ main.cpp  
 4)./a.out   
 
-  For Python. use  
+  For Python, use:  
 1)cd Tremolo/python_module  
 2)python3 run.py
 
