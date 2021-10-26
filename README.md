@@ -1,5 +1,6 @@
 ![Banner](https://i.imgur.com/glErIFF.png)
 # Tremolo
+![](https://i.imgur.com/Mq1I50c.jpg)
 The main task of our project Tremolo is to create a safe, fast and convenient chat for communication over local and global networks, using modern technologies such as C++ and Python.
 
 
@@ -7,9 +8,9 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 
 
 
-# Screenshots
 
-![](https://i.imgur.com/Mq1I50c.jpg)
+
+
 
 
 
@@ -23,7 +24,7 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 
 
 - [Project Title](#tremolo)
-- [Screenshots](#screenshots)
+
 - [Table of contents](#table-of-contents)
 - [Installation](#installation)
 
@@ -46,8 +47,6 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 
 
 
-# Usage
-[(Back to top)](#table-of-contents)
 
 
   Leave a star in GitHub, give a clap in Medium and share if you found this helpful.
