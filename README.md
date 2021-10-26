@@ -36,16 +36,16 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
   For C, you will need to open Terminal and type following commands:  
 ```bash
 
-```git clone https://github.com/radixiura/Tremolo  
-2)cd Tremolo/cpp_module/bin  
-3)g++ main.cpp  
-4)./a.out 
+git clone https://github.com/radixiura/Tremolo  
+Tremolo/cpp_module/bin  
+g++ main.cpp  
+./a.out 
 ```
   For Python users, type:  
 ```bash
   
-1)cd Tremolo/python_module  
-2)python3 run.py
+cd Tremolo/python_module  
+python3 run.py
 ```
 
 
