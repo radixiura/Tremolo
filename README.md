@@ -32,13 +32,13 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 [(Back to top)](#table-of-contents)
 
 
-For C, you will need to open Terminal and type folowwing commands:
+  For C, you will need to open Terminal and type folowwing commands:
 1)git clone https://github.com/radixiura/Tremolo
 2)cd Tremolo/cpp_module/bin
 3)g++ main.cpp
-4)./a.out
+4)./a.out  
 
-For Python. use
+  For Python. use
 1)cd Tremolo/python_module
 2)python3 run.py
 
@@ -50,7 +50,7 @@ For Python. use
 [(Back to top)](#table-of-contents)
 
 
-Leave a star in GitHub, give a clap in Medium and share if you found this helpful.
+  Leave a star in GitHub, give a clap in Medium and share if you found this helpful.
 ![footer](https://i.imgur.com/l38Sz35.gif)
 
 
