@@ -49,8 +49,7 @@ For Python. use
 
 # Usage
 [(Back to top)](#table-of-contents)
-![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif)
-TBD
+
 
 Leave a star in GitHub, give a clap in Medium and share if you found this helpful.
 ![footer](https://i.imgur.com/l38Sz35.gif)
