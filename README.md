@@ -9,7 +9,8 @@ The main task of our project Tremolo is to create a safe, fast and convenient ch
 
 # Screenshots
 
-<!-- Add a demo for your project -->
+![](https://i.imgur.com/Mq1I50c.jpg)
+![](https://i.imgur.com/e4gvLvD.jpg)
 TDB
 
 
@@ -26,13 +27,21 @@ TDB
 - [Demo-Preview](#demo-preview)
 - [Table of contents](#table-of-contents)
 - [Installation](#installation)
-- [Footer](#footer)
+
 
 # Installation
 [(Back to top)](#table-of-contents)
 
 
-TBD
+For C, you will need to open Terminal and type folowwing commands:
+1)git clone https://github.com/radixiura/Tremolo
+2)cd Tremolo/cpp_module/bin
+3)g++ main.cpp
+4)./a.out
+
+For Python. use
+1)cd Tremolo/python_module
+2)python3 run.py
 
 
 
