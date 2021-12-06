@@ -4,14 +4,10 @@
 from functions import greetings, new_user_registration, user_authentication
 from main_menu_functions import main_menu
 
-
 # from modules import postgresql_connection
 # postgresql_connection.connect_postgresql()
 
-
-greetings.hello()
-
-
+print("Здравствуйте!")
 user_answer = input("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ")
 checking = True
 while checking:
