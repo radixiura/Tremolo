@@ -11,15 +11,6 @@ from main_menu_modules import main_menu
 # from modules import postgresql_connection
 # postgresql_connection.connect_postgresql()
 
-if platform == "linux" or platform == "linux2":
-    print('ln')
-elif platform == "darwin":
-    print('qdwd')
-elif platform == "win32":
-    print('wdd')
-
-os.system(r"modules\dist\design.exe")
-
 print("Здравствуйте!")
 user_answer = input("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ")
 checking = True
