@@ -29,9 +29,10 @@ def main_menu_buttons():
         
         
 def main_menu_modules_1():
-    login_for_new_message = input("Введите логин, на который нужно отправить сообщение: ")
-    message = input(f"Введите сообщение для {login_for_new_message}: ")
-    print(message)
+    if platform == "linux" or platform == "linux2":
+        os.system(r"modules\dist\message_gui.out")
+    elif platform == "win32":
+        os.system(r"modules\dist\message_gui.exe")
     main_menu_buttons()
     # if login_for_new_message exists in DB
     #   new_message = input("Введите текст вашего сообщения: ")
@@ -71,13 +72,13 @@ def main_menu_modules_4():
     user_choice4 = input("Введите 1, 2, 3, 4 или 0: ")
     if user_choice4 == "1":
         password_confirmation = input("Для продолжения введите ваш пароль: ")
-        #while password_confirmation != password:
-            #print("Не слишком похоже на ваш пароль. Попробуйте заново.")
-            #password_confirmation = input()
-            #if password_confirmation == password:
-                #login = input("Введите ваш новый логин:")
-                #print("Логин успешно изменен!")
-                #break
+        # while password_confirmation != password:
+        # print("Не слишком похоже на ваш пароль. Попробуйте заново.")
+        # password_confirmation = input()
+        # if password_confirmation == password:
+        # login = input("Введите ваш новый логин:")
+        # print("Логин успешно изменен!")
+        # break
     elif user_choice4 == "2":
         password_confirmation = input("Для продолжения введите ваш пароль: ")
     elif user_choice4 == "3":
@@ -97,11 +98,14 @@ def main_menu_modules_5():
     print('Назад - 0')
     user_choice5 = input("Введите 1, 2, 3 или 0: ")
     if user_choice5 == "1":
-        print("В данный момент есть два клиента Tremolo. Один полностью написан на C++, второй на Python3. Используемая СУДБ - PostgreSQL. Также, используется некоторая скриптовая поддержка Shell. Графический интерфейс программы построен на библиотеке Qt.")
+        print("В данный момент есть два клиента Tremolo. Один полностью написан на C++, второй на Python3. "
+              "Используемая СУДБ - PostgreSQL. Также, используется некоторая скриптовая поддержка Shell. Графический "
+              "интерфейс программы построен на библиотеке Qt.")
     elif user_choice5 == "2":
         print("Вы можете просто связаться с разработчиком, если не верите в безопасность нашего чата.")
     elif user_choice5 == "3":
-        print("Специально для урегулирования вражды между компилируемыми и интерпретируемыми языками программирования программа для нашего чата написана на c ++ и python.\n")
+        print("Специально для урегулирования вражды между компилируемыми и интерпретируемыми языками программирования "
+              "программа для нашего чата написана на c ++ и python.\n")
     elif user_choice5 == "3":
         main_menu_buttons()
     elif user_choice5 == "0":
