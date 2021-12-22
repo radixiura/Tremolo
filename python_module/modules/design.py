@@ -16,9 +16,9 @@ class Example(QWidget):
 
     def initUI(self):
 
-        title = QLabel('Title')
-        author = QLabel('Author')
-        review = QLabel('Review')
+        title = QLabel('Получатель')
+        author = QLabel('Тема')
+        review = QLabel('Сообщение')
 
         titleEdit = QLineEdit()
         authorEdit = QLineEdit()
