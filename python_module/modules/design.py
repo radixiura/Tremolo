@@ -13,28 +13,27 @@ class Example(QWidget):
 
         self.initUI()
 
-
     def initUI(self):
 
-        title = QLabel('Получатель')
+        receiver = QLabel('Получатель')
         author = QLabel('Тема')
         review = QLabel('Сообщение')
 
-        titleEdit = QLineEdit()
-        authorEdit = QLineEdit()
-        reviewEdit = QTextEdit()
+        receiver_edit = QLineEdit()
+        theme_edit = QLineEdit()
+        message_edit = QTextEdit()
 
         grid = QGridLayout()
         grid.setSpacing(10)
 
-        grid.addWidget(title, 1, 0)
-        grid.addWidget(titleEdit, 1, 1)
+        grid.addWidget(receiver, 1, 0)
+        grid.addWidget(receiver_edit, 1, 1)
 
         grid.addWidget(author, 2, 0)
-        grid.addWidget(authorEdit, 2, 1)
+        grid.addWidget(theme_edit, 2, 1)
 
         grid.addWidget(review, 3, 0)
-        grid.addWidget(reviewEdit, 3, 1, 5, 1)
+        grid.addWidget(message_edit, 3, 1, 5, 1)
 
         self.setLayout(grid)
 
