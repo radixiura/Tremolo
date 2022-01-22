@@ -1,3 +1,6 @@
+import os
+from platform import platform
+
 import requests
 import bs4
 
@@ -26,13 +29,15 @@ def main_menu_buttons():
         main_menu_modules_6()
     elif user_choice == "0":
         main_menu_modules_0()
+    else:
+        main_menu_buttons()
         
         
 def main_menu_modules_1():
     if platform == "linux" or platform == "linux2":
         os.system(r"modules\dist\message_gui.out")
     elif platform == "win32":
-        os.system(r"modules\dist\message_gui.exe")
+        os.system(r"modules\dist\design.exe")
     main_menu_buttons()
     # if login_for_new_message exists in DB
     #   new_message = input("Введите текст вашего сообщения: ")
@@ -87,6 +92,8 @@ def main_menu_modules_4():
         password_confirmation = input("Для продолжения введите ваш пароль: ")
         print("Ваш аккаунт удален. До свидания!")
         exit()
+        main_menu_buttons()
+    else:
         main_menu_buttons()
 
 
