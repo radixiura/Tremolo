@@ -27,6 +27,8 @@ def create_connection(path):
 connection = create_connection("C:\\sm_app.sqlite")
 
 
+# Шаблон выполнения запроса
+# Параметры функции: (Скрипт подключения к бд, будущий запрос)
 def execute_query(connection, query):
     cursor = connection.cursor()
     try:
@@ -83,9 +85,11 @@ VALUES
 """
 
 # Запрос [Создание таблицы пользователей]
+# Параметры функции: (Скрипт подключения к бд, создание таблицы пользователей)
 execute_query(connection, create_users_table)
 
 # Запрос [Создание таблицы сообщений]
+# Параметры функции: (Скрипт подключения к бд, создание таблицы сообщений)
 execute_query(connection, create_messages_table)
 
 execute_query(connection, create_users)
