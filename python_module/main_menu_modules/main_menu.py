@@ -127,3 +127,4 @@ def main_menu_modules_6():
 
 def main_menu_modules_0():
     print("В настоящий момент я хикканю и у меня нет желания говорить.")
+    main_menu_buttons()
