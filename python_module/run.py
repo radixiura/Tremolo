@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 
-# Connecting a file with functions
 import os
+import sqlite3
+from sqlite3 import Error
 import subprocess
 import sys
 from sys import platform
+
 from functions import greetings, new_user_registration, user_authentication
 from main_menu_modules import main_menu
 
-import sqlite3
-from sqlite3 import Error
 
-
+# Подключение к базе данных
 def create_connection(path):
     connection = None
     try:
@@ -23,6 +23,7 @@ def create_connection(path):
     return connection
 
 
+# В переменную connection помещаем скрипт подключения к БД
 connection = create_connection("C:\\sm_app.sqlite")
 
 
@@ -36,6 +37,7 @@ def execute_query(connection, query):
         print(f"The error '{e}' occurred")
 
 
+# Создание таблицы пользователей со столбцами (id, логин, пароль, ранг)
 create_users_table = """
 CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -55,7 +57,6 @@ VALUES
   ('Mike', 40, 'male'),
   ('Elizabeth', 21, 'female');
 """
-
 
 
 create_messages_table = """
@@ -89,7 +90,51 @@ execute_query(connection, create_users)
 
 execute_query(connection, create_messages)
 
-# В переменную user_answer вносим возвращаемое значение функции приветствия (0/1)
+
+def execute_read_query(connection, query):
+    cursor = connection.cursor()
+    result = None
+    try:
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result
+    except Error as e:
+        print(f"The error '{e}' occurred")
+
+
+update_message_destination = """
+UPDATE
+  messages
+SET
+  destination = "The weather has become pleasant now"
+WHERE
+  id = 2
+"""
+
+execute_query(connection, update_message_destination)
+
+
+select_users = "SELECT * from users"
+users = execute_read_query(connection, select_users)
+
+select_message_destination = "SELECT destination FROM messages WHERE id = 2"
+
+post_description = execute_read_query(connection, select_message_destination)
+
+
+
+delete_comment = "DELETE FROM comments WHERE id = 5"
+execute_query(connection, delete_comment)
+
+for description in post_description:
+    print(description)
+
+
+for user in users:
+    print(user)
+
+
+# В переменную user_answer помещаем возвращаемое значение функции приветствия (0/1)
 user_answer = greetings.greetings()
 
 if user_answer == "0":
