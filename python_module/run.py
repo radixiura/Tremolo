@@ -41,34 +41,53 @@ CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   login_name TEXT NOT NULL,
   password TEXT,
+  rank TEXT
 );
 """
+
+create_users = """
+INSERT INTO
+  users (login_name, password, rank)
+VALUES
+  ('James', 25, 'male'),
+  ('Leila', 32, 'female'),
+  ('Brigitte', 35, 'female'),
+  ('Mike', 40, 'male'),
+  ('Elizabeth', 21, 'female');
+"""
+
 
 
 create_messages_table = """
-CREATE TABLE IF NOT EXISTS comments (
+CREATE TABLE IF NOT EXISTS messages (
   id INTEGER PRIMARY KEY AUTOINCREMENT, 
-  text TEXT NOT NULL, 
+  msg TEXT, 
+  destination TEXT,
   user_id INTEGER NOT NULL,  
-  FOREIGN KEY (user_id) REFERENCES users (id) FOREIGN KEY (post_id) REFERENCES posts (id)
+  FOREIGN KEY (user_id) REFERENCES users (id)
 );
 """
 
-create_diary_table = """
-CREATE TABLE IF NOT EXISTS likes (
-  id INTEGER PRIMARY KEY AUTOINCREMENT, 
-  user_id INTEGER NOT NULL, 
-  post_id integer NOT NULL, 
-  FOREIGN KEY (user_id) REFERENCES users (id) FOREIGN KEY (post_id) REFERENCES posts (id)
-);
+create_messages = """
+INSERT INTO
+  messages (msg, destination, user_id)
+VALUES
+  ("Happy", "I am feeling very happy today", 1),
+  ("Hot Weather", "The weather is very hot today", 2),
+  ("Help", "I need some help with my work", 2),
+  ("Great News", "I am getting married", 1),
+  ("Interesting Game", "It was a fantastic game of tennis", 5),
+  ("Party", "Anyone up for a late-night party today?", 3);
 """
-
-execute_query(connection, create_messages_table)
-execute_query(connection, create_diary_table)
 
 
 execute_query(connection, create_users_table)
 
+execute_query(connection, create_messages_table)
+
+execute_query(connection, create_users)
+
+execute_query(connection, create_messages)
 
 # В переменную user_answer вносим возвращаемое значение функции приветствия (0/1)
 user_answer = greetings.greetings()
