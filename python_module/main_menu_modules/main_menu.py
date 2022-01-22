@@ -117,6 +117,7 @@ def main_menu_modules_5():
         main_menu_buttons()
     elif user_choice5 == "0":
         print("НАЗАД")
+        main_menu_modules_5()
     main_menu_buttons()
 
 
