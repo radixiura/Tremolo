@@ -59,6 +59,7 @@ VALUES
 """
 
 
+# Создание таблицы сообщений со столбцами (id, сообщение, адресат, id адресанта)
 create_messages_table = """
 CREATE TABLE IF NOT EXISTS messages (
   id INTEGER PRIMARY KEY AUTOINCREMENT, 
@@ -81,9 +82,10 @@ VALUES
   ("Party", "Anyone up for a late-night party today?", 3);
 """
 
-
+# Запрос [Создание таблицы пользователей]
 execute_query(connection, create_users_table)
 
+# Запрос [Создание таблицы сообщений]
 execute_query(connection, create_messages_table)
 
 execute_query(connection, create_users)
