@@ -8,6 +8,7 @@ from sys import platform
 from functions import greetings, new_user_registration, user_authentication
 from main_menu_modules import main_menu
 
+# В переменную user_answer вносим возвращаемое значение приветственной функции (0/1)
 user_answer = greetings.greetings()
 
 if user_answer == "0":
