@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS users (
 );
 """
 
+# Заполнение данных в таблице пользователей
 create_users = """
 INSERT INTO
   users (login_name, password, rank)
@@ -72,6 +73,7 @@ CREATE TABLE IF NOT EXISTS messages (
 );
 """
 
+#Заполнение данных в таблице сообщений
 create_messages = """
 INSERT INTO
   messages (msg, destination, user_id)
