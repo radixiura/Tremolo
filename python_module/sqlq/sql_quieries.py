@@ -3,6 +3,7 @@ from sqlite3 import Error
 
 
 # Подключение к базе данных
+# Алиас в остальных файлах - connect
 def create_connection(path):
     connection = None
     try:
@@ -40,14 +41,6 @@ CREATE TABLE IF NOT EXISTS users (
 );
 """
 
-# Заполнение данных в таблице пользователей
-create_users = """
-INSERT INTO
-  users (login_name, password, rank)
-VALUES
-  ('bigdaddy', 'happ1n3ss_t0_3v3ry0n3', 'principale'),
-"""
-
 
 # Создание таблицы сообщений со столбцами (id, сообщение, адресат, id адресанта)
 create_messages_table = """
@@ -80,9 +73,6 @@ execute_query(connection, create_users_table)
 # Параметры функции: (Скрипт подключения к бд, создание таблицы сообщений)
 execute_query(connection, create_messages_table)
 
-# Параметры функции: (Скрипт подключения к бд, заполнение таблицы пользователей)
-execute_query(connection, create_users)
-
 # Параметры функции: (Скрипт подключения к бд, заполнение таблицы сообщений)
 execute_query(connection, create_messages)
 
@@ -100,7 +90,7 @@ def execute_read_query(connection, query):
         print(f"The error '{e}' occurred")
 
 
-select_users = "SELECT * from users"
+select_users = "SELECT ALL login_name FROM users"
 users = execute_read_query(connection, select_users)
 for user in users:
     print(user)
