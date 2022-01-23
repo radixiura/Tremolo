@@ -1,5 +1,8 @@
 import sqlq.sql_queries
 
+# Алиас скрипта подключения к бд
+connect = sqlq.sql_queries.connection
+
 
 def new_user_registration():
     # Логин нового пользователя
@@ -28,13 +31,14 @@ def new_user_registration():
         if new_user_password_confirmation == new_user_password:
             break
 
-    # Создание таблицы
-    sqlq.sql_queries.execute_query(sqlq.sql_queries.connection, sqlq.sql_queries.create_users_table)
+    # Создание таблицы пользователей
+    sqlq.sql_queries.execute_query(connect, sqlq.sql_queries.create_users_table)
 
+    # Добавление нового пользователя
     new_user = f"""
     INSERT INTO
       users (login_name, password, rank)
     VALUES
       ('{new_user_login}', '{new_user_password_confirmation}', 'slave')
     """
-    sqlq.sql_queries.execute_query(sqlq.sql_queries.connection, new_user)
+    sqlq.sql_queries.execute_query(connect, new_user)
