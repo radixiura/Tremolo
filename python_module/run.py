@@ -44,8 +44,8 @@ create_users_table = """
 CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   login_name TEXT NOT NULL,
-  password TEXT,
-  rank TEXT
+  password TEXT NOT NULL,
+  rank TEXT NOT NULL
 );
 """
 
@@ -54,8 +54,8 @@ create_users = """
 INSERT INTO
   users (login_name, password, rank)
 VALUES
-  ('James', 25, 'male'),
-  ('Leila', 32, 'female'),
+  ('bigdaddy', 'happ1n3ss_t0_3v3ry0n3', 'principale'),
+  ('joplej', 'gavnostar0', 'slave'),
   ('Brigitte', 35, 'female'),
   ('Mike', 40, 'male'),
   ('Elizabeth', 21, 'female');
@@ -66,14 +66,14 @@ VALUES
 create_messages_table = """
 CREATE TABLE IF NOT EXISTS messages (
   id INTEGER PRIMARY KEY AUTOINCREMENT, 
-  msg TEXT, 
-  destination TEXT,
+  msg TEXT NOT NULL, 
+  destination TEXT NOT NULL,
   user_id INTEGER NOT NULL,  
   FOREIGN KEY (user_id) REFERENCES users (id)
 );
 """
 
-#Заполнение данных в таблице сообщений
+# Заполнение данных в таблице сообщений
 create_messages = """
 INSERT INTO
   messages (msg, destination, user_id)
@@ -130,8 +130,7 @@ select_message_destination = "SELECT destination FROM messages WHERE id = 2"
 post_description = execute_read_query(connection, select_message_destination)
 
 
-
-delete_comment = "DELETE FROM comments WHERE id = 5"
+delete_comment = "DELETE FROM messages WHERE id = 5"
 execute_query(connection, delete_comment)
 
 for description in post_description:
