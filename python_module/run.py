@@ -27,7 +27,9 @@ def create_connection(path):
 connection = create_connection("C:\\sm_app.sqlite")
 
 
-# Шаблон выполнения запроса
+# Шаблоны выполнения запроса
+
+# Стандартный запрос к БД
 # Параметры функции: (Скрипт подключения к бд, будущий запрос)
 def execute_query(connection, query):
     cursor = connection.cursor()
@@ -37,6 +39,23 @@ def execute_query(connection, query):
         print("Query executed successfully")
     except Error as e:
         print(f"The error '{e}' occurred")
+
+
+# Запрос на извлечение данных из БД
+# Параметры функции: (Скрипт подключения к бд, будущий запрос)
+def execute_read_query(connection, query):
+    cursor = connection.cursor()
+    result = None
+    try:
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result
+    except Error as e:
+        print(f"The error '{e}' occurred")
+
+
+select_users = "SELECT * from users"
+users = execute_read_query(connection, select_users)
 
 
 # Создание таблицы пользователей со столбцами (id, логин, пароль, ранг)
@@ -86,28 +105,19 @@ VALUES
   ("Party", "Anyone up for a late-night party today?", 3);
 """
 
-# Запрос [Создание таблицы пользователей]
+# Запросы [Создание таблицы пользователей]
+
 # Параметры функции: (Скрипт подключения к бд, создание таблицы пользователей)
 execute_query(connection, create_users_table)
 
-# Запрос [Создание таблицы сообщений]
 # Параметры функции: (Скрипт подключения к бд, создание таблицы сообщений)
 execute_query(connection, create_messages_table)
 
+# Параметры функции: (Скрипт подключения к бд, заполнение таблицы пользователей)
 execute_query(connection, create_users)
 
+# Параметры функции: (Скрипт подключения к бд, заполнение таблицы сообщений)
 execute_query(connection, create_messages)
-
-
-def execute_read_query(connection, query):
-    cursor = connection.cursor()
-    result = None
-    try:
-        cursor.execute(query)
-        result = cursor.fetchall()
-        return result
-    except Error as e:
-        print(f"The error '{e}' occurred")
 
 
 update_message_destination = """
@@ -125,7 +135,6 @@ execute_query(connection, update_message_destination)
 select_users = "SELECT * from users"
 users = execute_read_query(connection, select_users)
 
-select_message_destination = "SELECT destination FROM messages WHERE id = 2"
 
 post_description = execute_read_query(connection, select_message_destination)
 
