@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import os
 import sqlite3
 from sqlite3 import Error
-import subprocess
-import sys
-from sys import platform
 
 from functions import greetings, new_user_registration, user_authentication
 from main_menu_modules import main_menu
@@ -56,6 +52,27 @@ def execute_read_query(connection, query):
 
 select_users = "SELECT * from users"
 users = execute_read_query(connection, select_users)
+
+for user in users:
+    print(user)
+
+# Запрос на обновление информации в БД
+select_message_destination = "SELECT destination FROM messages WHERE id = 2"
+message_destination = execute_read_query(connection, select_message_destination)
+
+for destination in message_destination:
+    print(destination)
+
+update_message_destination = """
+UPDATE
+  messages
+SET
+  destination = "The weather has become pleasant now"
+WHERE
+  id = 2
+"""
+
+execute_query(connection, update_message_destination)
 
 
 # Создание таблицы пользователей со столбцами (id, логин, пароль, ранг)
@@ -119,6 +136,12 @@ execute_query(connection, create_users)
 # Параметры функции: (Скрипт подключения к бд, заполнение таблицы сообщений)
 execute_query(connection, create_messages)
 
+# Шаблон обновления записи в БД
+select_message_destination = "SELECT destination FROM messages WHERE id = 2"
+message_destination = execute_read_query(connection, select_message_destination)
+
+for destination in message_destination:
+    print(destination)
 
 update_message_destination = """
 UPDATE
@@ -128,28 +151,14 @@ SET
 WHERE
   id = 2
 """
-
 execute_query(connection, update_message_destination)
 
-
-select_users = "SELECT * from users"
-users = execute_read_query(connection, select_users)
-
-
-post_description = execute_read_query(connection, select_message_destination)
-
-
+# Шаблон удаления записи из БД
 delete_comment = "DELETE FROM messages WHERE id = 5"
 execute_query(connection, delete_comment)
 
-for description in post_description:
-    print(description)
 
-
-for user in users:
-    print(user)
-
-
+# Основная часть
 # В переменную user_answer помещаем возвращаемое значение функции приветствия (0/1)
 user_answer = greetings.greetings()
 
