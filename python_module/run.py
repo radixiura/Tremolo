@@ -3,7 +3,7 @@
 import sqlite3
 from sqlite3 import Error
 
-from functions import greetings, new_user_registration, user_authentication
+from functions import greeting, new_user_registration, user_authentication
 from main_menu_modules import main_menu
 
 
@@ -160,7 +160,7 @@ execute_query(connection, delete_comment)
 
 # Основная часть
 # В переменную user_answer помещаем возвращаемое значение функции приветствия (0/1)
-user_answer = greetings.greetings()
+user_answer = greeting.greeting_function()
 
 if user_answer == "0":
     # Вызов функции регистрации
