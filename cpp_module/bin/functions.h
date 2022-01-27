@@ -4,8 +4,9 @@
 
 using namespace std;
 
-# Функция приветствия
-int greetings()
+// Функция приветствия V
+
+int greeting()
 {
 	printf("Привет!\n");
 	printf("Вы уже имеете аккаунт? Введите 1 если да, 0 если нет: ");
