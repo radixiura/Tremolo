@@ -4,7 +4,7 @@
 
 using namespace std;
 
-
+# Функция приветствия
 int greetings()
 {
 	printf("Привет!\n");
