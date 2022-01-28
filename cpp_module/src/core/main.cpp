@@ -7,10 +7,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
-#include "functions.h"
+#include "functions_principale.h"
 #include "new_user_registration.h"
 #include "user_authentication.h"
-#include "main_menu.h"
+#include "menu_principale.h"
 
 //#include "user.hpp"
 //#include "already_existing_user.hpp"
