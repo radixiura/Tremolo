@@ -1,5 +1,5 @@
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+#ifndef PRINCIPALE_FUNCTIONS_H
+#define PRINCIPALE_FUNCTIONS_H
                                                                                                                                        
 
 using namespace std;
