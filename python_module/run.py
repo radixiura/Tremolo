@@ -165,8 +165,6 @@ user_answer = greeting.greeting_function()
 if user_answer == "0":
     # Вызов функции регистрации
     new_user_registration.new_user_registration()
-    # Вызов функции аутентификации
-    user_authentication.user_authentication()
     # Главное меню
     main_menu.main_menu_buttons()
 elif user_answer == "1":
