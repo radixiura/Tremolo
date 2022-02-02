@@ -7,26 +7,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
+
+// Подключение заголовочных файлов
 #include "functions_principale.h"
 #include "new_user_registration.h"
 #include "user_authentication.h"
 #include "menu_principale.h"
-
-//#include "user.hpp"
-//#include "already_existing_user.hpp"
 
 
 int main()
 {
   using namespace std;
   setlocale(LC_ALL, "Russian");
-  int user_answer = greetings();
+  int user_answer = greeting();
   switch(user_answer)
   {
   	case 0:
   		new_user_registration();
   		break;
   	case 1:
+  		printf("Отлично!\n");
   		break;
   	default:
   		printf("Ошибка. Вы ввели что - то странное.\n");
