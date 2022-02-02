@@ -170,9 +170,10 @@ if user_answer == "0":
     # Главное меню
     main_menu.main_menu_buttons()
 elif user_answer == "1":
-    # Вызов функции аутентификации
-    user_authentication.user_authentication()
-    # Главное меню
-    main_menu.main_menu_buttons()
+    print("Отлично!")
 else:
     print("Ошибка. Вы ввели что - то странное.")
+
+user_authentication.user_authentication()
+main_menu.main_menu_buttons()
+
