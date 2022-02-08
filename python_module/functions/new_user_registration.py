@@ -1,7 +1,7 @@
 import sqlq.sql_queries
 from sqlite3 import Error
-# Алиас скрипта подключения к бд
-connect = sqlq.sql_queries.connection
+# Скрипт создания подключения к бд
+connect_to_db = sqlq.sql_queries.connection_to_db
 
 
 def execute_read_query(connection, query):
@@ -15,20 +15,8 @@ def execute_read_query(connection, query):
         print(f"The error '{e}' occurred")
 
 
-select_users = "SELECT ALL login_name FROM users"
-users = execute_read_query(connect, select_users)
-for user in users:
-    print(user)
-
-# Создать массив answers ответов БД (логины пользователей)
-
-
 def new_user_registration():
-    # Логин нового пользователя
     new_user_login = input("Самое время зарегистрироваться. Введите свой новый логин:  ")
-    # if new_user_login exist in answers
-        # print('Этот логин уже занят!')
-    # Проверка достаточности длины логина
     while len(new_user_login) < 8:
         print('Логин должен содержать более 8ми символов. Попробуйте заново.')
         new_user_login = input()
@@ -52,14 +40,11 @@ def new_user_registration():
         if new_user_password_confirmation == new_user_password:
             break
 
-    # Создание таблицы пользователей
-    sqlq.sql_queries.execute_query(connect, sqlq.sql_queries.create_users_table)
-
-    # Добавление нового пользователя
-    new_user = f"""
+    # Добавление нового пользователя после успешной регистрации
+    add_new_user = f"""
     INSERT INTO
       users (login_name, password, rank)
     VALUES
       ('{new_user_login}', '{new_user_password_confirmation}', 'slave')
     """
-    sqlq.sql_queries.execute_query(connect, new_user)
+    sqlq.sql_queries.execute_query(connect_to_db, add_new_user)
