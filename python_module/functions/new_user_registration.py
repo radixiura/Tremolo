@@ -1,12 +1,33 @@
 import sqlq.sql_queries
-
+from sqlite3 import Error
 # Алиас скрипта подключения к бд
 connect = sqlq.sql_queries.connection
+
+
+def execute_read_query(connection, query):
+    cursor = connection.cursor()
+    result = None
+    try:
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result
+    except Error as e:
+        print(f"The error '{e}' occurred")
+
+
+select_users = "SELECT ALL login_name FROM users"
+users = execute_read_query(connect, select_users)
+for user in users:
+    print(user)
+
+# Создать массив answers ответов БД (логины пользователей)
 
 
 def new_user_registration():
     # Логин нового пользователя
     new_user_login = input("Самое время зарегистрироваться. Введите свой новый логин:  ")
+    # if new_user_login exist in answers
+        # print('Этот логин уже занят!')
     # Проверка достаточности длины логина
     while len(new_user_login) < 8:
         print('Логин должен содержать более 8ми символов. Попробуйте заново.')
