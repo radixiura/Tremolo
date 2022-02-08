@@ -9,18 +9,18 @@ from main_menu_modules import main_menu
 
 # Подключение к базе данных
 def create_connection(path):
-    connection = None
+    connect_to_db = None
     try:
-        connection = sqlite3.connect(path)
+        connect_to_db = sqlite3.connect(path)
         print("Connection to SQLite DB successful")
     except Error as e:
         print(f"The error '{e}' occurred")
 
-    return connection
+    return connect_to_db
 
 
 # В переменную connection помещаем скрипт подключения к БД
-connection = create_connection("C:\\sm_app.sqlite")
+connection = create_connection("C:\\Users\\Radix\\Desktop\\tremolo_db.sqlite")
 
 
 # Шаблоны выполнения запроса
@@ -56,6 +56,7 @@ users = execute_read_query(connection, select_users)
 for user in users:
     print(user)
 
+
 # Запрос на обновление информации в БД
 select_message_destination = "SELECT destination FROM messages WHERE id = 2"
 message_destination = execute_read_query(connection, select_message_destination)
@@ -90,11 +91,8 @@ create_users = """
 INSERT INTO
   users (login_name, password, rank)
 VALUES
-  ('bigdaddy', 'happ1n3ss_t0_3v3ry0n3', 'principale'),
-  ('joplej', 'gavnostar0', 'slave'),
-  ('Brigitte', 35, 'female'),
-  ('Mike', 40, 'male'),
-  ('Elizabeth', 21, 'female');
+  ('bigdaddy', 'porridge1', 'principale'),
+  ('joplej', 'gavnostar0', 'slave');
 """
 
 
@@ -174,4 +172,3 @@ else:
 
 user_authentication.user_authentication()
 main_menu.main_menu_buttons()
-
