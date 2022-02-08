@@ -3,27 +3,24 @@
 import sqlite3
 from sqlite3 import Error
 
+from sqlq import sql_queries
 from functions import greeting, new_user_registration, user_authentication
 from main_menu_modules import main_menu
+
+# Скрипт создания подключения к бд
+connect_to_db = sql_queries.connection_to_db
 
 
 # Подключение к базе данных
 def create_connection(path):
-    connect_to_db = None
+    connection = None
     try:
-        connect_to_db = sqlite3.connect(path)
+        connection = sqlite3.connect(path)
         print("Connection to SQLite DB successful")
     except Error as e:
         print(f"The error '{e}' occurred")
+    return connection
 
-    return connect_to_db
-
-
-# В переменную connection помещаем скрипт подключения к БД
-connection = create_connection("C:\\Users\\Radix\\Desktop\\tremolo_db.sqlite")
-
-
-# Шаблоны выполнения запроса
 
 # Стандартный запрос к БД
 # Параметры функции: (Скрипт подключения к бд, будущий запрос)
@@ -53,3 +50,5 @@ else:
 
 user_authentication.user_authentication()
 main_menu.main_menu_buttons()
+
+# Конец секции "Основная часть" #
