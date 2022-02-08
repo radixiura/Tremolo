@@ -3,20 +3,19 @@ from sqlite3 import Error
 
 
 # Подключение к базе данных
-# Алиас в остальных файлах - connect
 def create_connection(path):
-    connection = None
+    connect_to_db = None
     try:
-        connection = sqlite3.connect(path)
-        print("Connection to SQLite DB successful")
+        connect_to_db = sqlite3.connect(path)
+        print("Подключение к базе данных прошло успешно.")
     except Error as e:
-        print(f"The error '{e}' occurred")
+        print(f"Ошибка '{e}'. Не удалось подключиться к базе данных")
 
-    return connection
+    return connect_to_db
 
 
 # В переменную connection помещен скрипт подключения к БД
-connection = create_connection("C:\\sm_app.sqlite")
+connection = create_connection("C:\\Users\\Radix\\Desktop\\tremolo_db.sqlite")
 
 
 # Шаблон запроса к БД
@@ -30,8 +29,8 @@ def execute_query(connection, query):
         print(f"The error '{e}' occurred")
 
 
-# Первичные запросы
-# Создание таблицы пользователей со столбцами (id, логин, пароль, ранг)
+# Создание первичных таблиц
+# Создание таблицы пользователей
 create_users_table = """
 CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -40,9 +39,19 @@ CREATE TABLE IF NOT EXISTS users (
   rank TEXT NOT NULL
 );
 """
+execute_query(connection, create_users_table)
 
+# Заполнение данных в таблице пользователей
+create_users_info = """
+INSERT INTO
+  users (login_name, password, rank)
+VALUES
+  ('bigdaddy', 'porridge1', 'principale'),
+  ('joplej', 'gavnostar0', 'slave');
+"""
+execute_query(connection, create_users_info)
 
-# Создание таблицы сообщений со столбцами (id, сообщение, адресат, id адресанта)
+# Создание таблицы сообщений
 create_messages_table = """
 CREATE TABLE IF NOT EXISTS messages (
   id INTEGER PRIMARY KEY AUTOINCREMENT, 
@@ -52,9 +61,10 @@ CREATE TABLE IF NOT EXISTS messages (
   FOREIGN KEY (user_id) REFERENCES users (id)
 );
 """
+execute_query(connection, create_messages_table)
 
 # Заполнение данных в таблице сообщений
-create_messages = """
+create_messages_info = """
 INSERT INTO
   messages (msg, destination, user_id)
 VALUES
@@ -65,16 +75,8 @@ VALUES
   ("Interesting Game", "It was a fantastic game of tennis", 5),
   ("Party", "Anyone up for a late-night party today?", 3);
 """
-
-# Первичные запросы V
-# Параметры функции: (Скрипт подключения к бд, создание таблицы пользователей)
-execute_query(connection, create_users_table)
-
-# Параметры функции: (Скрипт подключения к бд, создание таблицы сообщений)
-execute_query(connection, create_messages_table)
-
-# Параметры функции: (Скрипт подключения к бд, заполнение таблицы сообщений)
-execute_query(connection, create_messages)
+execute_query(connection, create_messages_info)
+# Конец секции "Создание первичных таблиц" #
 
 
 # Вторичные запросы V
