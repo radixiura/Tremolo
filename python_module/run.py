@@ -35,13 +35,9 @@ def execute_query(connection, query):
 
 
 # Основная часть
-# В переменную user_answer помещаем возвращаемое значение функции приветствия (0/1)
 user_answer = greeting.greeting_function()
-
 if user_answer == "0":
-    # Вызов функции регистрации
     new_user_registration.new_user_registration()
-    # Главное меню
     main_menu.main_menu_buttons()
 elif user_answer == "1":
     print("Отлично!")
@@ -50,5 +46,4 @@ else:
 
 user_authentication.user_authentication()
 main_menu.main_menu_buttons()
-
 # Конец секции "Основная часть" #
