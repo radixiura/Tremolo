@@ -3,7 +3,7 @@
 import sqlite3
 from sqlite3 import Error
 
-from sqlq import sql_queries
+from python_module.src.sqlq import sql_queries
 from functions import greeting, new_user_registration, user_authentication
 from main_menu_modules import main_menu
 
