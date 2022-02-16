@@ -18,15 +18,27 @@ def create_connection(path):
 connection_to_db = create_connection("C:\\Users\\Radix\\Desktop\\tremolo_db.sqlite")
 
 
-# Шаблон запроса к БД
+# Шаблон запроса к БД (Регистрация)
 def execute_query(connection, query):
     cursor = connection.cursor()
     try:
         cursor.execute(query)
         connection.commit()
-        print("Query executed successfully")
+        print("Вы были успешно зарегистрированы!")
     except Error as e:
-        print(f"The error '{e}' occurred")
+        print(f"Ошибка '{e}'. Регистрация не удалась!")
+
+
+# Шаблон запроса к БД (Регистрация)
+def execute_query(connection, query):
+    cursor = connection.cursor()
+    try:
+        cursor.execute(query)
+        connection.commit()
+        print("Вы были успешно зарегистрированы!")
+    except Error as e:
+        print(f"Ошибка '{e}'. Регистрация не удалась!")
+
 
 
 # Создание первичных таблиц
