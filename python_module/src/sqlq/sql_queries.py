@@ -10,16 +10,35 @@ def create_connection(path):
         print("Подключение к базе данных прошло успешно.")
     except Error as e:
         print(f"Ошибка '{e}'. Не удалось подключиться к базе данных")
-
     return connection
-
-
 # В переменную connection помещен скрипт создания подключения к БД
 connection_to_db = create_connection("C:\\Users\\Radix\\Desktop\\tremolo_db.sqlite")
 
+# Запросы к БД
+#  Создание базы данных пользователей
+def execute_query_create_users_table(connection, query):
+    cursor = connection.cursor()
+    try:
+        cursor.execute(query)
+        connection.commit()
+        print("База данных пользователей создана успешно!")
+    except Error as e:
+        print(f"Ошибка '{e}'. База данных пользователей не создалась!")
 
-# Шаблон запроса к БД (Регистрация)
-def execute_query(connection, query):
+
+#  Создание базы данных сообщений
+def execute_query_create_messages_table(connection, query):
+    cursor = connection.cursor()
+    try:
+        cursor.execute(query)
+        connection.commit()
+        print("База данных сообщений создана успешно!")
+    except Error as e:
+        print(f"Ошибка '{e}'. Регистрация не удалась!")
+
+
+#  Регистрация
+def execute_query_registration(connection, query):
     cursor = connection.cursor()
     try:
         cursor.execute(query)
@@ -29,15 +48,49 @@ def execute_query(connection, query):
         print(f"Ошибка '{e}'. Регистрация не удалась!")
 
 
-# Шаблон запроса к БД (Регистрация)
-def execute_query(connection, query):
+
+#  Добавление сообщения
+def execute_query_insert_into_messages(connection, query):
     cursor = connection.cursor()
     try:
         cursor.execute(query)
         connection.commit()
-        print("Вы были успешно зарегистрированы!")
+        print("Сообщение успешно добавлено!")
     except Error as e:
         print(f"Ошибка '{e}'. Регистрация не удалась!")
+
+
+#  Обновление информации
+def execute_query_renew(connection, query):
+    cursor = connection.cursor()
+    try:
+        cursor.execute(query)
+        connection.commit()
+        print("Запись успешно обновлена!")
+    except Error as e:
+        print(f"Ошибка '{e}'. Регистрация не удалась!")
+
+
+#  Удаление информации
+def execute_query_del(connection, query):
+    cursor = connection.cursor()
+    try:
+        cursor.execute(query)
+        connection.commit()
+        print("Запись успешно удалена!")
+    except Error as e:
+        print(f"Ошибка '{e}'. Регистрация не удалась!")
+
+
+def execute_read_query(connection, query):
+    cursor = connection.cursor()
+    result = None
+    try:
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result
+    except Error as e:
+        print(f"The error '{e}' occurred")
 
 
 
@@ -51,7 +104,7 @@ CREATE TABLE IF NOT EXISTS users (
   rank TEXT NOT NULL
 );
 """
-execute_query(connection_to_db, create_users_table)
+execute_query_create_users_table(connection_to_db, create_users_table)
 
 # Создание таблицы сообщений
 create_messages_table = """
@@ -63,7 +116,7 @@ CREATE TABLE IF NOT EXISTS messages (
   FOREIGN KEY (recipient) REFERENCES users (id)
 );
 """
-execute_query(connection_to_db, create_messages_table)
+execute_query_create_messages_table(connection_to_db, create_messages_table)
 
 # Заполнение данных в таблице сообщений
 create_messages_info = """
@@ -73,7 +126,7 @@ VALUES
   ("kosovojesrbjia", "bigdaddy", 1),
   ("ohrlyfuck!", "joplej", 2);
 """
-execute_query(connection_to_db, create_messages_info)
+execute_query_insert_into_messages(connection_to_db, create_messages_info)
 # Конец секции "Создание первичных таблиц" #
 
 
@@ -86,8 +139,8 @@ SET
 WHERE
   id = 2
 """
-execute_query(connection_to_db, update_message_text)
+execute_query_renew(connection_to_db, update_message_text)
 
 # Запрос удаления записи из БД
 delete_comment = "DELETE FROM messages WHERE id = 5"
-execute_query(connection_to_db, delete_comment)
+execute_query_del(connection_to_db, delete_comment)

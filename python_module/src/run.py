@@ -7,7 +7,6 @@ from main_menu_modules import main_menu
 user_answer = greeting.greeting_function()
 if user_answer == "0":
     new_user_registration.new_user_registration()
-    main_menu.main_menu_buttons()
 elif user_answer == "1":
     print("Отлично!")
 else:

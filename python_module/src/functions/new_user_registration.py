@@ -4,15 +4,7 @@ from sqlite3 import Error
 connect_to_db = sqlq.sql_queries.connection_to_db
 
 
-def execute_read_query(connection, query):
-    cursor = connection.cursor()
-    result = None
-    try:
-        cursor.execute(query)
-        result = cursor.fetchall()
-        return result
-    except Error as e:
-        print(f"The error '{e}' occurred")
+
 
 
 def new_user_registration():
@@ -47,4 +39,4 @@ def new_user_registration():
     VALUES
       ('{new_user_login}', '{new_user_password_confirmation}', 'slave')
     """
-    sqlq.sql_queries.execute_query(connect_to_db, add_new_user)
+    sqlq.sql_queries.execute_query_registration(connect_to_db, add_new_user)
