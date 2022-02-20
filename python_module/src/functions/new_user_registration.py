@@ -4,18 +4,16 @@ from sqlite3 import Error
 connect_to_db = sqlq.sql_queries.connection_to_db
 
 
-
-
-
-def new_user_registration():
+def new_user_registration_get_login():
     new_user_login = input("Самое время зарегистрироваться. Введите свой новый логин:  ")
     while len(new_user_login) < 8:
         print('Логин должен содержать более 8ми символов. Попробуйте заново.')
         new_user_login = input()
         if len(new_user_login) > 8:
             break
+    return new_user_login
 
-    # Пароль нового пользователя
+def new_user_registration_get_password():
     new_user_password = input("Введите ваш новый пароль: ")
     # Проверка достаточности длины пароля
     while len(new_user_password) < 8:
@@ -23,14 +21,18 @@ def new_user_registration():
         new_user_password = input()
         if len(new_user_password) > 8:
             break
+    return new_user_password
 
-    # Подтверждение нового пароля
-    new_user_password_confirmation = input("Введите свой новый пароль еще раз: ")
-    while new_user_password != new_user_password_confirmation:
+
+# Подтверждение нового пароля
+def new_user_password_confirmation():
+    new_user_password_confirmation_input = input("Введите свой новый пароль еще раз: ")
+    checking_password = new_user_registration()
+    if new_user_password_confirmation_input != checking_password:
         print('Введенные пароли не сходятся. Попробуйте еще раз.\n')
-        new_user_password_confirmation = input()
-        if new_user_password_confirmation == new_user_password:
-            break
+        new_user_registration()
+    else:
+        print("успешная регистрация")
 
     # Добавление нового пользователя после успешной регистрации
     add_new_user = f"""

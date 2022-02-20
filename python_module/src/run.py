@@ -4,6 +4,7 @@ from functions import greeting, new_user_registration, user_authentication
 from main_menu_modules import main_menu
 
 # Основная часть
+# Вызов функции приветствия и передача значения в переменную user_answer
 user_answer = greeting.greeting_function()
 if user_answer == "0":
     new_user_registration.new_user_registration()
