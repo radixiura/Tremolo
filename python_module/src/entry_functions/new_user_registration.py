@@ -10,8 +10,6 @@ def registration():
     login = new_user_registration_get_loginpassword.new_user_registration_get_login()
     password = new_user_registration_get_loginpassword.new_user_registration_get_password()
 
-
-
     new_user_password_confirmation_input = input("Введите свой новый пароль еще раз: ")
 
     while new_user_password_confirmation_input != password:
