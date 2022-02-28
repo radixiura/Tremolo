@@ -17,10 +17,5 @@ def user_authentication():
     if password_checking == []:
         print("Логин или пароль введены неправильно! Попробуйте еще раз \n")
         user_authentication()
-    if x == 1:
-        print("Логиныч или пароль введены неправильно! Попробуйте еще раз \n")
-        user_authentication()
-    else:
-        print("все ахуен")
     print(f"{login}, вы успешно вошли.")
     return login, password

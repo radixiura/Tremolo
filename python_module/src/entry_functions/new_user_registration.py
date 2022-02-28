@@ -14,10 +14,9 @@ def registration():
 
     while new_user_password_confirmation_input != password:
         print('Введенные пароли не сходятся. Попробуйте еще раз.\n')
+        new_user_password_confirmation_input = input("Введите свой новый пароль еще раз: ")
         if new_user_password_confirmation_input == password:
             break
-    else:
-        print("успешная регистрация")
 
 
     add_new_user = f"""
