@@ -11,7 +11,7 @@ def user_authentication():
     query_for_check =  f"SELECT ALL password FROM users WHERE password='{password}'"
     password_checking = sqlq.sql_queries.execute_read_query(connect_to_db, query_for_check)
     if password_checking == []:
-        print("Логин или пароль введены неправильно! Попробуйте еще раз \n")
+        print("Логин или пароль введены неправильно! Попробуйте еще раз.")
         user_authentication()
     print(f"{login}, вы успешно вошли.")
     return login, password

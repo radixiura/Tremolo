@@ -12,7 +12,7 @@ if user_answer == "0":
 elif user_answer == "1":
     print("Отлично!")
 else:
-    print("Ошибка. Вы ввели что - то странное.")
+    print("Ошибка! Вы ввели что - то странное, попробуйте еще раз.")
     greeting.greeting_function()
 
 user_authentication.user_authentication()
