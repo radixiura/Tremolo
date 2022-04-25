@@ -1,3 +1,9 @@
+# Основной файл программы
+# Содержание:
+
+# -*- coding: utf-8 -*-
+
+# Импорты
 import sqlq.sql_queries
 from sqlite3 import Error
 from entry_functions.new_user_registration_functions import new_user_reg_get_login, new_user_reg_get_password
