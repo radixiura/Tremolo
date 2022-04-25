@@ -1,3 +1,9 @@
+# Основной файл программы
+# Содержание:
+
+# -*- coding: utf-8 -*-
+
+# Импорты
 import sqlq.sql_queries
 from sqlite3 import Error
 
