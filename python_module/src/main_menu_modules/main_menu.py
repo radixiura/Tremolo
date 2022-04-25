@@ -1,18 +1,23 @@
+# Функции главного меню
+# Содержание
+
+# -*- coding: utf-8 -*-
+
+# Импорты
 import os
 from platform import platform
-
 import requests
 import bs4
 
-
+# Часть 1
 def main_menu_buttons():
     print("Меню:")
     print("Отправить сообщение - 1")
-    print("Узнать курс BTC - 2")  # ready
-    print("Узнать свой ip - адрес - 3")  # ready
+    print("Узнать курс BTC - 2")
+    print("Узнать свой ip - адрес - 3")
     print("Настройки аккаунта - 4")
-    print("Узнать больше о программе - 5")  # ready
-    print("Завершить работу - 6")  # ready
+    print("Узнать больше о программе - 5")
+    print("Завершить работу - 6")
     print("Связаться с разработчиком - 0")
     user_choice = input("Введите 1, 2, 3, 4, 5, 6 или 0: ")
     if user_choice == "1":
