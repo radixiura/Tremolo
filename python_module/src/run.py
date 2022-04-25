@@ -1,7 +1,10 @@
+# Основной файл программы
+# Содержание:
+
 # -*- coding: utf-8 -*-
 
+# Импорты
 from entry_functions import greeting, new_user_registration, user_authentication
-
 from main_menu_modules import main_menu
 
 # Основная часть
