@@ -9,10 +9,10 @@ from main_menu_modules import main_menu
 
 # Часть 1
 # 1.1
-user_answer = greeting.greeting_function()
-if user_answer == "0":
+user_answer_entry = greeting.greeting_function()
+if user_answer_entry == "0":
     new_user_registration.registration()
-elif user_answer == "1":
+elif user_answer_entry == "1":
     print("Отлично!")
 else:
     print("Ошибка! Вы ввели что - то странное, попробуйте еще раз.")
