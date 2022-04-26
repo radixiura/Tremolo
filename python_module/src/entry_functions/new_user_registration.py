@@ -13,7 +13,7 @@ connect_to_db = sqlq.sql_queries.connection_to_db
 
 # Часть 1
 # 1.1 Функция регистрации пользователя
-def registration():
+def registration_func():
     # 1.1.1 Получение логина нового пользователя
     login = new_user_reg_get_login.get_login()
     # 1.1.2 Получение пароля нового пользователя
