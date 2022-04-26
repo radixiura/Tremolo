@@ -25,5 +25,5 @@ while not user_answer_entry_correct:
 
 # Часть 2
 # 2.1
-user_authentication.user_authentication()
+user_authentication.authentication_func()
 main_menu.main_menu_buttons()

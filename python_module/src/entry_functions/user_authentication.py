@@ -6,15 +6,16 @@
 # Импорты
 import sqlq.sql_queries
 from sqlite3 import Error
+from entry_functions.new_user_registration_functions import new_user_reg_get_login, new_user_reg_get_password
 
 # Скрипт создания подключения к бд
 connect_to_db = sqlq.sql_queries.connection_to_db
 
 # Часть 1
 # 1.1 Функция входа пользователя
-def user_authentication():
+def authentication_func():
     # 1.1.1 Получение логина пользователя
-    login = input("Введите логин: ")
+    login = user_ath_get_login.get_login()
     # 1.1.2 Запрос на проверку существования логина
     query_for_login_check = f"SELECT ALL login_name FROM users WHERE login_name='{login}'"
     login_checking = sqlq.sql_queries.execute_read_query(connect_to_db, query_for_login_check)
@@ -30,7 +31,7 @@ def user_authentication():
 
 
     # 1.1.3 Получение пароля пользователя
-    password = input("Введите пароль: ")
+    password = user_ath_get_password.get_password()
     # 1.1.4 Запрос на проверку существования пароля
     query_for_check =  f"SELECT ALL password FROM users WHERE password='{password}'"
     password_checking = sqlq.sql_queries.execute_read_query(connect_to_db, query_for_check)
