@@ -10,7 +10,8 @@ from sqlite3 import Error
 # Скрипт создания подключения к бд
 connect_to_db = sqlq.sql_queries.connection_to_db
 
-
+# Часть 1
+# 1.1 Функция получения логина нового пользователя
 def get_login():
     new_user_login = input("Самое время зарегистрироваться. Введите свой новый логин:  ")
     new_user_login_correct = False

@@ -10,8 +10,10 @@ from sqlite3 import Error
 # Скрипт создания подключения к бд
 connect_to_db = sqlq.sql_queries.connection_to_db
 
-
+# Часть 1
+# 1.1 Функция получения пароля нового пользователя
 def get_password():
+    # 1.1.2 Ввод пароля нового пользователя
     new_user_login = input("Введите пароль:  ")
     new_user_login_correct = False
     while not new_user_login_correct:

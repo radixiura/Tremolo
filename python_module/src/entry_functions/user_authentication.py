@@ -6,7 +6,7 @@
 # Импорты
 import sqlq.sql_queries
 from sqlite3 import Error
-from entry_functions.new_user_registration_functions import new_user_reg_get_login, new_user_reg_get_password
+from entry_functions.user_authentication_functions import user_ath_get_login, user_ath_get_password
 
 # Скрипт создания подключения к бд
 connect_to_db = sqlq.sql_queries.connection_to_db
@@ -16,18 +16,8 @@ connect_to_db = sqlq.sql_queries.connection_to_db
 def authentication_func():
     # 1.1.1 Получение логина пользователя
     login = user_ath_get_login.get_login()
-    # 1.1.2 Запрос на проверку существования логина
-    query_for_login_check = f"SELECT ALL login_name FROM users WHERE login_name='{login}'"
-    login_checking = sqlq.sql_queries.execute_read_query(connect_to_db, query_for_login_check)
-
-    login_correct = False
-    while not login_correct:
-        if login_checking == []:
-            print("Логин введен неправильно! Попробуйте еще раз")
-            user_authentication()
-        else:
-            print(f"{login}, вы успешно вошли.")
-            login_correct = True
+    # 1.1.2 Получение пароля пользователя
+    password = user_ath_get_password.get_password()
 
 
     # 1.1.3 Получение пароля пользователя
