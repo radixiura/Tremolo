@@ -4,12 +4,17 @@
 # -*- coding: utf-8 -*-
 
 # Импорты
+import time
+
+
 from entry_functions import greeting, new_user_registration, user_authentication
 from main_menu_modules import main_menu
 
 # Часть 1
 # 1.1
 user_answer_entry = greeting.greeting_func()
+time.sleep(3)
+# 1.2
 user_answer_entry_correct = False
 while not user_answer_entry_correct:
     if user_answer_entry == "0":
