@@ -9,7 +9,7 @@ from main_menu_modules import main_menu
 
 # Часть 1
 # 1.1
-user_answer_entry = greeting.greeting_function()
+user_answer_entry = greeting.greeting_func()
 user_answer_entry_correct = False
 while not user_answer_entry_correct:
     if user_answer_entry == "0":
@@ -20,7 +20,7 @@ while not user_answer_entry_correct:
         user_answer_entry_correct = True
     else:
         print("Ошибка! Вы ввели что - то странное, попробуйте еще раз.")
-        greeting.greeting_function()
+        greeting.greeting_func()
 
 
 # Часть 2
