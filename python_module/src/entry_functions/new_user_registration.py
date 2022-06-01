@@ -23,10 +23,8 @@ def registration_func():
     login = new_user_reg_get_login.get_login()
     # 1.1.2 Получение пароля нового пользователя
     password = new_user_reg_get_password.get_password()
-    time.sleep(3)
     # 1.1.3 Подтверждение пароля нового пользователя
     new_user_password_confirmation_input = input("Введите свой новый пароль еще раз: ")
-    time.sleep(3)
     while new_user_password_confirmation_input != password:
         print('Введенные пароли не сходятся. Попробуйте еще раз.')
         new_user_password_confirmation_input = input("Введите свой новый пароль еще раз: ")
