@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e1070852-1365-4929-9e34-4aad0ae13bf2" name="Changes" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_module/src/entry_functions/new_user_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_module/src/entry_functions/new_user_reg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_module/src/entry_functions/new_user_registration_functions/new_user_reg_get_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_module/src/entry_functions/new_user_reg_functions/new_user_reg_get_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_module/src/entry_functions/new_user_registration_functions/new_user_reg_get_password.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_module/src/entry_functions/new_user_reg_functions/new_user_reg_get_password.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_module/src/entry_functions/user_authentication_functions/user_ath_get_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_module/src/entry_functions/user_auth_functions/user_ath_get_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_module/src/entry_functions/user_authentication_functions/user_ath_get_password.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_module/src/entry_functions/user_auth_functions/user_ath_get_password.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_module/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_module/src/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_module/src/modules/design.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_module/src/modules/design.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +44,7 @@
       <recent name="C:\Users\Radix\PycharmProjects\Tremolo\python_module\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run">
+  <component name="RunManager" selected="Python.design">
     <configuration name="design" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -94,8 +89,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run" />
         <item itemvalue="Python.design" />
+        <item itemvalue="Python.run" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +257,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654057575279</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Commit">
+      <created>1655038995562</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1655038995562</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Commit">
+      <created>1655039021654</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1655039021654</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
