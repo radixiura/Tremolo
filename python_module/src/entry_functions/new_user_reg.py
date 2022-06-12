@@ -26,8 +26,8 @@ def registration_func():
     # 1.1.3 Подтверждение пароля нового пользователя
     new_user_password_confirmation_input = input("Введите свой новый пароль еще раз: ")
     while new_user_password_confirmation_input != password:
-        print('Введенные пароли не сходятся. Попробуйте еще раз.')
         time.sleep(3)
+        print('Введенные пароли не сходятся. Попробуйте еще раз.')
         new_user_password_confirmation_input = input("Введите свой новый пароль еще раз: ")
         if new_user_password_confirmation_input == password:
             break

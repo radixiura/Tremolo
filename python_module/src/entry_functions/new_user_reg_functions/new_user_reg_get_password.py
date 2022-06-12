@@ -17,10 +17,10 @@ connect_to_db = sqlq.sql_queries.connection_to_db
 # 1.1 Функция получения пароля нового пользователя
 def get_password():
     new_user_password = input("Введите ваш новый пароль: ")
-    time.sleep(3)
     new_user_password_correct = False
     while not new_user_password_correct:
         if len(new_user_password) < 8:
+            time.sleep(3)
             print('Пароль должен содержать более 8ми символов. Попробуйте заново.')
             new_user_password = input("Введите свой пароль еще раз:  ")
         else:
