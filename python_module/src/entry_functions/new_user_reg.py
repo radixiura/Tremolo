@@ -10,7 +10,7 @@ from sqlite3 import Error
 import time
 
 
-from entry_functions.new_user_registration_functions import new_user_reg_get_login, new_user_reg_get_password
+from entry_functions.new_user_reg_functions import new_user_reg_get_login, new_user_reg_get_password
 
 # Скрипт создания подключения к бд
 connect_to_db = sqlq.sql_queries.connection_to_db
@@ -27,6 +27,7 @@ def registration_func():
     new_user_password_confirmation_input = input("Введите свой новый пароль еще раз: ")
     while new_user_password_confirmation_input != password:
         print('Введенные пароли не сходятся. Попробуйте еще раз.')
+        time.sleep(3)
         new_user_password_confirmation_input = input("Введите свой новый пароль еще раз: ")
         if new_user_password_confirmation_input == password:
             break

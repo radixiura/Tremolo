@@ -6,7 +6,7 @@
 # Импорты
 import sqlq.sql_queries
 from sqlite3 import Error
-from entry_functions.user_authentication_functions import user_ath_get_login, user_ath_get_password
+from entry_functions.user_auth_functions import user_auth_get_login, user_auth_get_password
 
 # Скрипт создания подключения к бд
 connect_to_db = sqlq.sql_queries.connection_to_db

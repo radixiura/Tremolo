@@ -7,7 +7,7 @@
 import time
 
 
-from entry_functions import greeting, new_user_registration, user_authentication
+from entry_functions import greeting, new_user_reg, user_auth
 from main_menu_modules import main_menu
 
 # Часть 1
@@ -17,7 +17,7 @@ user_answer_entry = greeting.greeting_func()
 user_answer_entry_correct = False
 while not user_answer_entry_correct:
     if user_answer_entry == "0":
-        new_user_registration.registration_func()
+        new_user_reg.registration_func()
         user_answer_entry_correct = True
     elif user_answer_entry == "1":
         print("Отлично!")
